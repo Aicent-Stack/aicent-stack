@@ -10,7 +10,8 @@
 
 > ### ✅ Core Workspace Synchronized
 
-![Aicent](https://github.com/user-attachments/assets/c9b84335-ff51-49b5-aa25-e5ca5a12252c)
+![Aicent-01](https://github.com/user-attachments/assets/0a134388-2380-455a-b00b-294fb40a7501)
+
 
 ## 🧬 Aicent Stack - Biological Neural Map meets Industrial Infrastructure Grid
 
