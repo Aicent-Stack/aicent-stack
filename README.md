@@ -14,21 +14,27 @@
 
 ## 🧬 Aicent Stack - Biological Neural Map meets Industrial Infrastructure Grid
 
-**The Sovereign AI Nervous System**  
-Building the first complete biological blueprint for autonomous, self-evolving AI lifeforms.
+**Cargo Workspace for Aicent Stack**  
+Unified dependency and build management for the 5 core protocol crates.
 
----
+## Structure
 
-## Biological Blueprint
+This workspace manages the following crates:
 
-| Layer       | Module          | Role                                      | Repository |
-|-------------|-----------------|-------------------------------------------|------------|
-| **Brain**   | Aicent          | AID identity + autonomous task decomposition | [aicent](https://github.com/Aicent-Stack/aicent) |
-| **Nerves**  | RTTP            | Sub-millisecond Pulse Frame nervous system | [rttp](https://github.com/Aicent-Stack/rttp) |
-| **Immunity**| RPKI            | Zero-trust watermark & task-chain verification | [rpki](https://github.com/Aicent-Stack/rpki) |
-| **Blood**   | ZCMK            | Zero-commission DePIN compute market & value flow | [zcmk](https://github.com/Aicent-Stack/zcmk) |
-| **Body**    | GTIOT           | Embodied sensing & actuation with shadow state | [gtiot](https://github.com/Aicent-Stack/gtiot) |
+- **[aicent](https://github.com/Aicent-Stack/aicent)** — Brain (决策中枢)
+- **[rttp](https://github.com/Aicent-Stack/rttp)** — Nerves (神经系统)
+- **[rpki](https://github.com/Aicent-Stack/rpki)** — Immunity (免疫系统)
+- **[zcmk](https://github.com/Aicent-Stack/zcmk)** — Blood (价值流转)
+- **[gtiot](https://github.com/Aicent-Stack/gtiot)** — Body (具身执行)
 
+## Quick Start
+
+```bash
+git clone https://github.com/Aicent-Stack/aicent-stack.git
+cd aicent-stack
+cargo check          # 检查所有 crate
+cargo build          # 构建所有 crate
+cargo run --example demo -p rttp   # 运行 RTTP demo
 ## Cargo Workspace
 
 All five core crates are managed under a unified workspace:  
