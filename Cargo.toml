@@ -1,0 +1,34 @@
+[workspace]
+members = [
+    "aicent",
+    "rttp",
+    "rpki",
+    "zcmk",
+    "gtiot",
+]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+authors = ["Aicent Stack Team <contact@aicent.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/Aicent-Stack"
+keywords = ["ai-infra", "sovereign-ai", "low-latency", "dep-in", "rust"]
+categories = ["network-programming", "asynchronous", "hardware"]
+rust-version = "1.75"
+
+[workspace.dependencies]
+# Unify dependency version management (you can change this later).
+serde = { version = "1.0", features = ["derive"] }
+anyhow = "1.0"
+bytes = "1.6"
+tokio = { version = "1", features = ["full"] }
+rand = "0.8"
+rayon = "1.10"
+crossbeam-channel = "0.5"
+thiserror = "1.0"
+
+# If you need to cross-create dependencies in the future, you can declare them here.
+# rttp = { path = "rttp" }
+# rpki = { path = "rpki" }
