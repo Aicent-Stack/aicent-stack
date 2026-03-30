@@ -1,3 +1,14 @@
+# Aicent Stack | The Sovereign AI Nervous System
+# Domain: http://aicent.com
+# Specification: Unified Workspace for RFC-001/002/003/004/005
+# Licensed under Apache-2.0 via Aicent.com Organization.
+# 
+# [RFC-001] AICENT: The Brain
+# [RFC-002] RTTP:   The Nerves
+# [RFC-003] RPKI:   The Immunity
+# [RFC-004] ZCMK:   The Blood
+# [RFC-005] GTIOT:  The Body
+
 [workspace]
 members = [
     "aicent",
