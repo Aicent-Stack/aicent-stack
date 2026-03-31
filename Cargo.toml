@@ -16,6 +16,7 @@ members = [
     "rpki",
     "zcmk",
     "gtiot",
+    "aicent-demo",
 ]
 resolver = "2"
 
