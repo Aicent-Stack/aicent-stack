@@ -3,12 +3,12 @@ Aicent Stack • Sovereign AI Nervous System
 # 🧠 aicent-stack — The Unified Workspace of Aicent Stack
 
  **The Sovereign AI Nervous System | Integrated Core Framework**
-
-⚪ **AICENT** (Brain) | 💎 **RTTP** (Nerves) | 🔴 **RPKI** (Immunity) | 🟢 **ZCMK** (Blood) | 🟡 **GTIOT** (Body)
  
 [![RFC](https://img.shields.io/badge/RFC-001-white.svg)](https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-001-AICENT-BRAIN.md)
 [![Status](https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg)](#)
 [![Org](https://img.shields.io/badge/Org-Aicent.com-blue.svg)](http://aicent.com)
+
+⚪ **AICENT** (Brain) | 💎 **RTTP** (Nerves) | 🔴 **RPKI** (Immunity) | 🟢 **ZCMK** (Blood) | 🟡 **GTIOT** (Body)
 
 ![Aicent-01](https://github.com/user-attachments/assets/0a134388-2380-455a-b00b-294fb40a7501)
 
