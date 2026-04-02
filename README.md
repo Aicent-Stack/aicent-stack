@@ -1,26 +1,16 @@
 Aicent Stack • Sovereign AI Nervous System
 
 # 🧠 aicent-stack — The Unified Workspace of Aicent Stack
- ⚪ **AICENT**  💎 **RTTP**  🔴 **RPKI**  🟢 **ZCMK**  🟡 **GTIOT** 
+
+ **The Sovereign AI Nervous System | Integrated Core Framework**
+
+⚪ **AICENT** (Brain) | 💎 **RTTP** (Nerves) | 🔴 **RPKI** (Immunity) | 🟢 **ZCMK** (Blood) | 🟡 **GTIOT** (Body)
  
 [![RFC](https://img.shields.io/badge/RFC-001-white.svg)](https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-001-AICENT-BRAIN.md)
 [![Status](https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg)](#)
 [![Org](https://img.shields.io/badge/Org-Aicent.com-blue.svg)](http://aicent.com)
 
 ![Aicent-01](https://github.com/user-attachments/assets/0a134388-2380-455a-b00b-294fb40a7501)
-
----
-
-**The Sovereign AI Nervous System | Integrated Core Framework**
-
-<p align="left">
-  <img src="https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg" alt="Status">
-  <img src="https://img.shields.io/badge/Workspace-Synchronized-blue.svg" alt="Workspace">
-  <img src="https://img.shields.io/badge/Language-Rust-orange.svg" alt="Language">
-  <img src="https://img.shields.io/badge/Specs-RFC--001--005-white.svg" alt="Specs">
-</p>
-
-⚪ **AICENT** (Brain) | 💎 **RTTP** (Nerves) | 🔴 **RPKI** (Immunity) | 🟢 **ZCMK** (Blood) | 🟡 **GTIOT** (Body)
 
 ---
 
