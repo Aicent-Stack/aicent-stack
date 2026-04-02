@@ -22,25 +22,68 @@ resolver = "2"
 
 [workspace.package]
 version = "0.1.0"
-edition = "2026"
+edition = "2021"  # Standard stable edition for high-perf Rust
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
-keywords = ["ai-infra", "sovereign-ai", "low-latency", "dep-in", "rust"]
-categories = ["network-programming", "asynchronous", "hardware"]
+homepage = "http://aicent.com"
+keywords = ["ai-infra", "sovereign-ai", "low-latency", "depin", "rfc-standard"]
+categories = ["network-programming", "embedded", "cryptography"]
 rust-version = "1.75"
 
-[workspace.dependencies]
-# Unify dependency version management (you can change this later).
-serde = { version = "1.0", features = ["derive"] }
-anyhow = "1.0"
-bytes = "1.6"
-tokio = { version = "1", features = ["full"] }
-rand = "0.8"
-rayon = "1.10"
-crossbeam-channel = "0.5"
-thiserror = "1.0"
+# ====================================================================
+# [WORKSPACE DEPENDENCIES] - The Organism's Shared DNA
+# Centralized versioning for the entire 5-domain stack.
+# ====================================================================
 
-# If you need to cross-create dependencies in the future, you can declare them here.
-# rttp = { path = "rttp" }
-# rpki = { path = "rpki" }
+[workspace.dependencies]
+# --- Core Organism Linking ---
+# Enabling internal crates to reference each other via workspace.
+aicent = { path = "aicent" }
+rttp   = { path = "rttp" }
+rpki   = { path = "rpki" }
+zcmk   = { path = "zcmk" }
+gtiot  = { path = "gtiot" }
+
+# --- High-Performance Async & Concurrency ---
+tokio = { version = "1.37", features = ["full"] }
+rayon = "1.10"                # For Parallel SIMD-level tasks (RPKI scans)
+crossbeam = "0.8"             # High-frequency lock-free data structures
+parking_lot = "0.12"          # Faster mutexes for sub-ms reflex arcs
+
+# --- Data & Memory Safety ---
+serde = { version = "1.0", features = ["derive"] }
+bytes = "1.6"                 # Zero-copy buffer management (RTTP Pulse Frames)
+smallvec = "1.13"             # Stack allocation optimization for nanosecond dispatch
+zeroize = "1.7"               # Secure memory clearing for RPKI credentials
+
+# --- Error Handling & Diagnostics ---
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"               # High-performance telemetry for cognitive cycles
+
+# --- Embedded & Hardware (GTIOT Adaptation) ---
+embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
+embassy-time = "0.3"
+
+# --- Cryptography & Identity (RPKI) ---
+ring = "0.17"                 # Core crypto for tensor watermarking
+sha2 = "0.10"                 # Merkle DAG hashing
+
+# ====================================================================
+# [WORKSPACE LINTS] - Quality Enforcement
+# Shows the world that Aicent Stack code is rigorous and audit-ready.
+# ====================================================================
+
+[workspace.lints.clippy]
+# Disallow unsafe without comments (Critical for RPKI/RTTP security)
+undocumented_unsafe_blocks = "warn"
+# Optimization lints
+manual_memcpy = "warn"
+perf = "warn"
+
+[profile.release]
+opt-level = 3                 # Maximum optimization for production reflexes
+lto = "fat"                   # Link-Time Optimization for cross-crate speed
+codegen-units = 1             # Better optimization at the cost of compile time
+panic = "abort"               # Minimize binary size and prevent memory leaks
