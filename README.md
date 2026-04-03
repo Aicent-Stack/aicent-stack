@@ -28,7 +28,7 @@
 
 ---
 
-## 🏗️ Biological Blueprint (The 5-Domain Stack)
+## 🏗️ Biological Blueprint (The 6-Domain Stack)
 
 Every crate in this workspace is governed by a specific **RFC Specification**.
 
@@ -39,6 +39,7 @@ Every crate in this workspace is governed by a specific **RFC Specification**.
 | **Immunity**| [rpki](./rpki) | Parallel Tensor Watermarking & Security | [**RFC-003**](https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-003-RPKI-IMMUNITY.md) |
 | **Blood** | [zcmk](./zcmk) | Zero-Commission RTBA Compute Market | [**RFC-004**](https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-004-ZCMK-BLOOD.md) |
 | **Body** | [gtiot](./gtiot) | Embodied Sensing & Action-Collapse | [**RFC-005**](https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-005-GTIOT-BODY.md) |
+| **Hive** | [Aicent.net](http://aicent.net) | Global Operational Grid & Intelligence | [**RFC-006**](https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-006-AICENT-NET.md) |
 
 ---
 
