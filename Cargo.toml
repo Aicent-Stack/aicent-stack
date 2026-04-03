@@ -1,13 +1,17 @@
 # Aicent Stack | The Sovereign AI Nervous System
-# Domain: http://aicent.com
-# Specification: Unified Workspace for RFC-001/002/003/004/005
+# Domain: http://aicent.com & http://aicent.net
+# ====================================================================
+# [INDIVIDUAL REFLEX SPECIFICATIONS]
+# [RFC-001] AICENT: The Brain    (Active / Standard)
+# [RFC-002] RTTP:   The Nerves   (Active / Standard)
+# [RFC-003] RPKI:   The Immunity (Active / Standard)
+# [RFC-004] ZCMK:   The Blood    (Active / Standard)
+# [RFC-005] GTIOT:  The Body     (Active / Standard)
+#
+# [COLLECTIVE INTELLIGENCE SPECIFICATIONS]
+# [RFC-006] AICENT-NET: The Hive (Draft / Active Evolution)
+# ====================================================================
 # Licensed under Apache-2.0 via Aicent.com Organization.
-# 
-# [RFC-001] AICENT: The Brain
-# [RFC-002] RTTP:   The Nerves
-# [RFC-003] RPKI:   The Immunity
-# [RFC-004] ZCMK:   The Blood
-# [RFC-005] GTIOT:  The Body
 
 [workspace]
 members = [
@@ -23,68 +27,73 @@ resolver = "2"
 
 [workspace.package]
 version = "0.1.0"
-edition = "2021"  # Standard stable edition for high-perf Rust
+edition = "2021"
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-keywords = ["ai-infra", "sovereign-ai", "low-latency", "depin", "rfc-standard"]
-categories = ["network-programming", "embedded", "cryptography"]
+keywords = ["ai-infra", "sovereign-ai", "low-latency", "depin", "rfc-standard", "hive-mind"]
+categories = ["network-programming", "embedded", "cryptography", "distributed-computing"]
 rust-version = "1.75"
 
 # ====================================================================
-# [WORKSPACE DEPENDENCIES] - The Organism's Shared DNA
-# Centralized versioning for the entire 5-domain stack.
+# [WORKSPACE DEPENDENCIES] - The Integrated Organism's DNA
 # ====================================================================
 
 [workspace.dependencies]
-# --- Core Organism Linking ---
-# Enabling internal crates to reference each other via workspace.
-aicent = { path = "aicent" }
-rttp   = { path = "rttp" }
-rpki   = { path = "rpki" }
-zcmk   = { path = "zcmk" }
-gtiot  = { path = "gtiot" }
+# --- Core Organism Linking (Cross-Domain Authority) ---
+aicent     = { path = "aicent" }
+rttp       = { path = "rttp" }
+rpki       = { path = "rpki" }
+zcmk       = { path = "zcmk" }
+gtiot      = { path = "gtiot" }
+aicent-net = { path = "aicent-net" }
 
-# --- High-Performance Async & Concurrency ---
+# --- High-Performance Async & Neural Orchestration ---
 tokio = { version = "1.37", features = ["full"] }
-rayon = "1.10"                # For Parallel SIMD-level tasks (RPKI scans)
-crossbeam = "0.8"             # High-frequency lock-free data structures
-parking_lot = "0.12"          # Faster mutexes for sub-ms reflex arcs
+rayon = "1.10"                 # Parallel SIMD scanning (RFC-003)
+crossbeam = "0.8"              # Lock-free shunting for nanosecond matching (RFC-004)
+parking_lot = "0.12"           # Faster atomic locks for 1.2kHz proprioception (RFC-005)
+async-trait = "0.1"            # Trait abstraction for Sovereign AID (RFC-001)
+futures = "0.3"                # High-throughput streams for Hive-Mind sync (RFC-006)
 
-# --- Data & Memory Safety ---
+# --- Data & Memory Sovereignty ---
 serde = { version = "1.0", features = ["derive"] }
-bytes = "1.6"                 # Zero-copy buffer management (RTTP Pulse Frames)
-smallvec = "1.13"             # Stack allocation optimization for nanosecond dispatch
-zeroize = "1.7"               # Secure memory clearing for RPKI credentials
+bytes = "1.6"                  # Zero-copy buffer management for RTTP pulses
+smallvec = "1.13"              # Optimization for stack-allocated motor primitives
+zeroize = "1.7"                # Secure zeroing of RPKI cryptographic seeds
 
-# --- Error Handling & Diagnostics ---
-anyhow = "1.0"
-thiserror = "1.0"
-tracing = "0.1"               # High-performance telemetry for cognitive cycles
+# --- Cryptography & Integrity (The Immune DNA) ---
+ring = "0.17"                  # Core steganography for tensor watermarking
+sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain
 
-# --- Embedded & Hardware (GTIOT Adaptation) ---
+# --- Hardware Adaptation (Embedded GTIOT) ---
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
 embassy-time = "0.3"
 
-# --- Cryptography & Identity (RPKI) ---
-ring = "0.17"                 # Core crypto for tensor watermarking
-sha2 = "0.10"                 # Merkle DAG hashing
+# --- Error Handling & Real-time Telemetry ---
+anyhow = "1.0"
+thiserror = "1.0"
+tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
 
 # ====================================================================
-# [WORKSPACE LINTS] - Quality Enforcement
-# Shows the world that Aicent Stack code is rigorous and audit-ready.
+# [WORKSPACE LINTS] - Quality Enforcement (Carrier-Grade Rigor)
 # ====================================================================
+
+[workspace.lints.rust]
+unsafe_op_in_unsafe_fn = "warn"
+missing_docs = "warn"
 
 [workspace.lints.clippy]
-# Disallow unsafe without comments (Critical for RPKI/RTTP security)
+# Disallow unsafe without comments (Critical for RPKI security audit)
 undocumented_unsafe_blocks = "warn"
-# Optimization lints
+# Optimization lints for sub-ms reflex arc
 manual_memcpy = "warn"
 perf = "warn"
+pedantic = "warn"
 
 [profile.release]
-opt-level = 3                 # Maximum optimization for production reflexes
-lto = "fat"                   # Link-Time Optimization for cross-crate speed
-codegen-units = 1             # Better optimization at the cost of compile time
-panic = "abort"               # Minimize binary size and prevent memory leaks
+opt-level = 3                 # Maximum optimization for production homeostasis
+lto = "fat"                   # Link-Time Optimization for cross-domain performance
+codegen-units = 1             # Better binary density for hardware caches
+panic = "abort"               # Ensure absolute determinism in failure states
