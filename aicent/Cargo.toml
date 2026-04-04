@@ -6,14 +6,14 @@ edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
-homepage = "http://aicent.com"
+homepage = "https://aicent.com"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-001-AICENT-BRAIN.md"
 keywords = ["sovereign-ai", "orchestration", "cognitive-hub", "rfc-001", "aicent-stack"]
 categories = ["ai", "asynchronous", "science", "distributed-computing"]
 rust-version = "1.75"
 
 [dependencies]
-# --- Core Domain Orchestration ---
+# --- Core Organism Linking ---
 # The Brain orchestrates the nervous system (RTTP), immunity (RPKI), 
 # value metabolism (ZCMK), and physical execution (GTIOT).
 rttp.workspace = true
@@ -21,23 +21,20 @@ rpki.workspace = true
 zcmk.workspace = true
 gtiot.workspace = true
 
-# --- Hive Intelligence (Optional) ---
-# [RFC-006] The Brain interfaces with the Grid for collective cognition.
-aicent-net = { workspace = true, optional = true }
-
-# --- Cognitive & Logic Layer ---
+# --- Logic & Data Handling ---
+# Optimized for high-throughput cognitive pulse decomposition
 serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
 tokio = { workspace = true, features = ["full"] }
-tracing = { workspace = true }        # Industrial-grade telemetry for cognitive cycles
-async-trait = { workspace = true }    # Orchestration Trait abstraction
-once_cell = { workspace = true }      # Safe global state management
+tracing.workspace = true        # Industrial-grade telemetry for cognitive cycles
+async-trait.workspace = true    # Trait abstraction for Sovereign AID orchestration
+once_cell.workspace = true      # High-performance static state management
 
 [features]
 default = ["std"]
-std = ["serde/std", "anyhow/std"]
-# [RFC-006] Enable Hive-Mind consensus
-hive-sync = ["aicent-net"]
+std = ["serde/std", "anyhow/std", "rttp/std", "rpki/std", "zcmk/std", "gtiot/std"]
+# [RFC-006] Enable collective Hive-Mind convergence
+hive-sync = []
 
 [dev-dependencies]
 # Benchmarking tools for sub-ms cognitive resolution
