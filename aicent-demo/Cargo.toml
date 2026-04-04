@@ -6,10 +6,10 @@ edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
-homepage = "http://aicent.com/Demo/"
+homepage = "https://aicent.com/Demo/"
 documentation = "https://github.com/Aicent-Stack/manifesto"
-keywords = ["sovereign-ai", "demo-suite", "reflex-arc", "kinetic-resonance"]
-categories = ["development-tools", "simulation"]
+keywords = ["ai-demo", "sovereign-ai", "reflex-arc", "swarm-intelligence", "rfc-standard"]
+categories = ["simulation", "network-programming", "robotics"]
 
 # ====================================================================
 # [BINARIES] - The Six-Domain Organism Suite
@@ -46,23 +46,20 @@ path = "src/bin/aicent-net-demo.rs"
 
 [dependencies]
 # Core Organs from Workspace
-aicent.workspace = true
-rttp.workspace = true
-rpki.workspace = true
-zcmk.workspace = true
-gtiot.workspace = true
-aicent-net.workspace = true
+aicent     = { workspace = true }
+rttp       = { workspace = true }
+rpki       = { workspace = true }
+zcmk       = { workspace = true }
+gtiot      = { workspace = true }
+aicent-net = { workspace = true }
 
 # --- Utilities & Telemetry ---
-anyhow.workspace = true
-serde = { workspace = true, features = ["derive"] }
-rand.workspace = true
-
-# High-frequency telemetry for demonstration logs
-tokio = { workspace = true, features = ["full"] }
+anyhow = { workspace = true }
+serde  = { workspace = true, features = ["derive"] }
+tokio  = { workspace = true, features = ["full"] }
+rand   = { workspace = true }
 tracing = { workspace = true }
-tracing-subscriber = { version = "0.3", features = ["env-filter"] }
 
 [dev-dependencies]
-# Benchmarking tools for validation of sub-ms finality
+# Benchmarking tools for sub-ms audit
 criterion = "0.5"
