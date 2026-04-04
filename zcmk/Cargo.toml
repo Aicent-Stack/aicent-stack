@@ -1,6 +1,6 @@
 [package]
 name = "zcmk"
-description = "ZCMK: Real-Time Bid/Ask (RTBA) and Zero-Commission Settlement Protocol [RFC-004]"
+description = "ZCMK: Real-Time Bid/Ask (RTBA) Zero-Commission Settlement Protocol [RFC-004]"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
@@ -13,24 +13,25 @@ categories = ["financial-services", "algorithms", "distributed-computing"]
 rust-version = "1.75"
 
 [dependencies]
-# --- Core Organism Linking ---
-# ZCMK is the blood of the organism; it clears value atomically with RTTP pulses.
-rttp.workspace = true
-aicent.workspace = true
+# --- Core Organism Linking (L1 Metabolic Layer) ---
+# ZCMK operates as a pure financial primitive. It consumes neural pulses (RTTP) 
+# to execute atomic clearings. High-level cognitive orchestration (Aicent Brain) 
+# is decoupled to maintain a strict unidirectional dependency graph.
+rttp = { workspace = true }
 
 # --- HFT-Grade Matching Engine ---
-# [PERF] High-frequency lock-free data structures for nanosecond auctions.
-crossbeam-queue.workspace = true
-parking_lot.workspace = true   # HFT-grade synchronization primitives
-num-traits = { version = "0.2", default-features = false } # High-precision arithmetic
+# [PERF] High-concurrency lock-free queues for nanosecond-speed auctioning
+crossbeam-queue = { workspace = true }
+parking_lot = { workspace = true }   # [PERF] HFT-grade synchronization primitives
+num-traits = { version = "0.2", default-features = false } # [FINANCE] Precision math for picotoken (10^-12) arithmetic
+once_cell = { workspace = true }     # Safe static initialization of the market manifold
 
 # --- Logic & Telemetry ---
 serde = { workspace = true, features = ["derive"] }
-anyhow.workspace = true
+anyhow = { workspace = true }
 tokio = { workspace = true, features = ["sync", "rt"] }
-rand.workspace = true          # Stochastic entropy for market pressure simulation
-tracing.workspace = true       # Financial telemetry for audit trails
-once_cell.workspace = true
+rand = { workspace = true }          # Chaos-testing the market pressure
+tracing = { workspace = true }       # Financial telemetry for audit trails
 
 [features]
 default = ["std"]
@@ -40,4 +41,4 @@ hive-metabolism = []
 
 [dev-dependencies]
 # Benchmarking finality latency (<1ms targets)
-criterion = "0.5"
+criterion = { workspace = true }
