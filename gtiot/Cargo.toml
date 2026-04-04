@@ -14,20 +14,19 @@ rust-version = "1.75"
 
 [dependencies]
 # --- Core Organism Linking ---
-# The Body reacts to Nerves (RTTP), Immunity (RPKI), and Blood (ZCMK)
+# The Body reacts via Nerves (RTTP), governed by Immunity (RPKI) and Blood (ZCMK)
 rttp.workspace = true
 rpki.workspace = true
 zcmk.workspace = true
 
-# --- Hard Real-Time Execution ---
-# [RFC-005] High-frequency (1.2 kHz) task scheduling
+# --- Hard Real-Time & Embedded Execution ---
+# [RFC-005] Embassy executor for sub-ms control loops (1.2 kHz)
 embassy-executor.workspace = true
 embassy-time.workspace = true
-
-# --- Kinetic Primitives ---
+# [PERF] Zero-allocation motor trajectory storage
+smallvec.workspace = true
 # [PHYSICS] Linear algebra for 12-DOF robotics and motor torque vectors
 nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
-smallvec = { workspace = true, features = ["serde"] }
 
 # --- Logic & Telemetry ---
 serde = { workspace = true, features = ["derive"] }
@@ -38,10 +37,10 @@ tokio = { workspace = true, features = ["sync"] } # Simulation bridge
 
 [features]
 default = ["std"]
-# [RFC-005] Standard library support for high-fidelity edge fusion
 std = ["serde/std", "anyhow/std", "rttp/std"]
 # [RFC-005] Bare-metal support for robotics MCUs/NPUs
 no_std = ["nalgebra/libm"]
 
 [dev-dependencies]
-criterion = "0.5" # Auditing the 200µs Action-Collapse target
+# Benchmarking for 200µs Action-Collapse performance targets
+criterion = "0.5"
