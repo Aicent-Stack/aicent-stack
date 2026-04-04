@@ -35,7 +35,7 @@ homepage = "http://aicent.com"
 rust-version = "1.75"
 
 # ====================================================================
-# [WORKSPACE DEPENDENCIES] - The Central Armory
+# [WORKSPACE DEPENDENCIES] - The Absolute Source of Truth
 # ====================================================================
 
 [workspace.dependencies]
@@ -51,8 +51,9 @@ aicent-net = { path = "aicent-net" }
 tokio = { version = "1.37", features = ["full"] }
 rayon = "1.10"
 crossbeam = "0.8"
-# 🛡️ 关键补丁：补齐子库需要的具体通道库
-crossbeam-channel = "0.5" 
+crossbeam-channel = "0.5"
+# 🛡️ Critical fix: Replenish the blood system's required queues.
+crossbeam-queue = "0.3" 
 parking_lot = "0.12"
 async-trait = "0.1"
 futures = "0.3"
@@ -65,7 +66,7 @@ bytes = "1.6"
 smallvec = "1.13"
 zeroize = "1.7"
 tracing = "0.1"
-rand = "0.8" # 🛡️ 补齐子库可能用到的随机库
+rand = "0.8"
 
 # --- Cryptography & Hardware ---
 ring = "0.17"
