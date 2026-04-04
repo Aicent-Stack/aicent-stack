@@ -1,18 +1,68 @@
 [package]
 name = "aicent-demo"
+description = "Aicent Stack: Complete six-domain sovereign AI organism demo suite."
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
+homepage = "http://aicent.com/Demo/"
+documentation = "https://github.com/Aicent-Stack/manifesto"
+keywords = ["sovereign-ai", "demo-suite", "reflex-arc", "kinetic-resonance"]
+categories = ["development-tools", "simulation"]
+
+# ====================================================================
+# [BINARIES] - The Six-Domain Organism Suite
+# Each binary acts as a point-of-entry for auditing specific RFC protocols.
+# ====================================================================
+
+[[bin]]
+name = "aicent-organism"
+path = "src/bin/aicent-organism.rs"
+
+[[bin]]
+name = "rttp-demo"
+path = "src/bin/rttp-demo.rs"
+
+[[bin]]
+name = "rpki-demo"
+path = "src/bin/rpki-demo.rs"
+
+[[bin]]
+name = "zcmk-demo"
+path = "src/bin/zcmk-demo.rs"
+
+[[bin]]
+name = "gtiot-demo"
+path = "src/bin/gtiot-demo.rs"
+
+[[bin]]
+name = "aicent-net-demo"
+path = "src/bin/aicent-net-demo.rs"
+
+# ====================================================================
+# [DEPENDENCIES] - Integrated Workspace DNA
+# ====================================================================
 
 [dependencies]
+# Core Organs from Workspace
 aicent.workspace = true
 rttp.workspace = true
 rpki.workspace = true
 zcmk.workspace = true
 gtiot.workspace = true
 aicent-net.workspace = true
+
+# --- Utilities & Telemetry ---
 anyhow.workspace = true
-tokio = { workspace = true, features = ["full"] }
+serde = { workspace = true, features = ["derive"] }
 rand.workspace = true
+
+# High-frequency telemetry for demonstration logs
+tokio = { workspace = true, features = ["full"] }
+tracing = { workspace = true }
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+[dev-dependencies]
+# Benchmarking tools for validation of sub-ms finality
+criterion = "0.5"
