@@ -32,16 +32,14 @@ authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-keywords = ["ai-infra", "sovereign-ai", "low-latency", "depin", "rfc-standard", "hive-mind"]
-categories = ["network-programming", "embedded", "cryptography", "distributed-computing"]
 rust-version = "1.75"
 
 # ====================================================================
-# [WORKSPACE DEPENDENCIES] - The Integrated Organism's DNA
+# [WORKSPACE DEPENDENCIES] - The Central Armory
 # ====================================================================
 
 [workspace.dependencies]
-# --- Core Organism Linking (Cross-Domain Authority) ---
+# --- Internal Domain Linking ---
 aicent     = { path = "aicent" }
 rttp       = { path = "rttp" }
 rpki       = { path = "rpki" }
@@ -49,51 +47,34 @@ zcmk       = { path = "zcmk" }
 gtiot      = { path = "gtiot" }
 aicent-net = { path = "aicent-net" }
 
-# --- High-Performance Async & Neural Orchestration ---
+# --- High-Performance Primitives ---
 tokio = { version = "1.37", features = ["full"] }
-rayon = "1.10"                 # Parallel SIMD scanning (RFC-003)
-crossbeam = "0.8"              # Lock-free shunting for nanosecond matching (RFC-004)
-parking_lot = "0.12"           # Faster atomic locks for 1.2kHz proprioception (RFC-005)
-async-trait = "0.1"            # Trait abstraction for Sovereign AID (RFC-001)
-futures = "0.3"                # High-throughput streams for Hive-Mind sync (RFC-006)
+rayon = "1.10"
+crossbeam = "0.8"
+# 🛡️ 关键补丁：补齐子库需要的具体通道库
+crossbeam-channel = "0.5" 
+parking_lot = "0.12"
+async-trait = "0.1"
+futures = "0.3"
 
-# --- Data & Memory Sovereignty ---
+# --- Data & Safety ---
 serde = { version = "1.0", features = ["derive"] }
-bytes = "1.6"                  # Zero-copy buffer management for RTTP pulses
-smallvec = "1.13"              # Optimization for stack-allocated motor primitives
-zeroize = "1.7"                # Secure zeroing of RPKI cryptographic seeds
+anyhow = "1.0"
+thiserror = "1.0"
+bytes = "1.6"
+smallvec = "1.13"
+zeroize = "1.7"
+tracing = "0.1"
+rand = "0.8" # 🛡️ 补齐子库可能用到的随机库
 
-# --- Cryptography & Integrity (The Immune DNA) ---
-ring = "0.17"                  # Core steganography for tensor watermarking
-sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain
-
-# --- Hardware Adaptation (Embedded GTIOT) ---
+# --- Cryptography & Hardware ---
+ring = "0.17"
+sha2 = "0.10"
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
 embassy-time = "0.3"
 
-# --- Error Handling & Real-time Telemetry ---
-anyhow = "1.0"
-thiserror = "1.0"
-tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
-
-# ====================================================================
-# [WORKSPACE LINTS] - Quality Enforcement (Carrier-Grade Rigor)
-# ====================================================================
-
-[workspace.lints.rust]
-unsafe_op_in_unsafe_fn = "warn"
-missing_docs = "warn"
-
-[workspace.lints.clippy]
-# Disallow unsafe without comments (Critical for RPKI security audit)
-undocumented_unsafe_blocks = "warn"
-# Optimization lints for sub-ms reflex arc
-manual_memcpy = "warn"
-perf = "warn"
-pedantic = "warn"
-
 [profile.release]
-opt-level = 3                 # Maximum optimization for production homeostasis
-lto = "fat"                   # Link-Time Optimization for cross-domain performance
-codegen-units = 1             # Better binary density for hardware caches
-panic = "abort"               # Ensure absolute determinism in failure states
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
