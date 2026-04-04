@@ -1,25 +1,45 @@
 [package]
 name = "rttp"
+description = "RTTP: Sub-millisecond Neural Transport and Stateful Semantic Multicast [RFC-002]"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
-description = "RTTP: Sub-millisecond Neural Transport and Stateful Semantic Multicast [RFC-002]"
+homepage = "https://rttp.com"
+documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-002-RTTP-NERVES.md"
+keywords = ["neural-transport", "low-latency", "rfc-002", "pulse-frame", "multicast"]
+categories = ["network-programming", "asynchronous", "embedded"]
+rust-version = "1.75"
 
 [dependencies]
-# --- Protocol Primitives ---
+# --- Core Organism Linking ---
+# Integrating Immunity and Blood layers at the wire level for "Reflex Trinity"
+rpki.workspace = true
+zcmk.workspace = true
+
+# --- Neural Transport Primitives ---
 serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
-bytes = { workspace = true, features = ["serde"] }
+bytes = { workspace = true, features = ["serde"] } # Zero-copy packet buffers
+smallvec.workspace = true                          # Stack-allocated pulse fragments
 
 # --- High-Performance Backbone ---
+# tokio features optimized for real-time neural dispatch
 tokio = { workspace = true, features = ["net", "rt", "sync"] }
-smallvec.workspace = true
-crossbeam.workspace = true
-once_cell.workspace = true
+crossbeam = { workspace = true }                   # Multi-core shunting
+crossbeam-channel = { workspace = true }           # High-freq dispatch
+once_cell = { workspace = true }
+tracing = { workspace = true }                    # Telemetry for nerve-impulse audit
 
-# --- Security & Provenance (Reflex Trinity Integration) ---
-# Explicit dependency helps the compiler trace the Reflex Trinity integrity
-rpki = { workspace = true }
-zcmk = { workspace = true }
+[features]
+default = ["std"]
+std = ["serde/std", "anyhow/std"]
+# [RFC-002] Performance-critical hardware offload hooks (DPDK/eBPF)
+hardware-accelerated = []
+# [RFC-005] Bare-metal support for GTIOT robotics nodes
+embedded = []
+
+[dev-dependencies]
+# Performance auditing for sub-420µs sync targets
+criterion = "0.5"
