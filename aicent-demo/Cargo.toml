@@ -1,65 +1,89 @@
 [package]
 name = "aicent-demo"
-description = "Aicent Stack: Complete six-domain sovereign AI organism demo suite."
+description = "Aicent Stack: Integrated Simulation Suite for the Six-Domain Sovereign AI Organism."
 version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
+edition = "2024" # Explicitly set edition to 2024 for consistency
+authors = ["Aicent Stack Team <lee@aicent.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/Aicent-Stack/aicent-demo" # Points to its own independent repository
 homepage = "http://aicent.com/Demo/"
-documentation = "https://github.com/Aicent-Stack/manifesto"
-keywords = ["ai-demo", "sovereign-ai", "reflex-arc", "swarm-intelligence", "rfc-standard"]
-categories = ["simulation", "network-programming", "robotics"]
+documentation = "https://github.com/Aicent-Stack/manifesto" # Points to the central protocol documentation
+keywords = ["ai-demo", "sovereign-ai", "reflex-arc", "six-domain", "orchestration", "simulation"]
+categories = ["development-tools", "simulation", "robotics", "network-programming"]
+rust-version = "1.85" # Explicitly set rust-version to 1.85 for consistency
 
 # ====================================================================
-# [BINARIES] - The Six-Domain Organism Suite
-# Each binary acts as a point-of-entry for auditing specific RFC protocols.
+# [BINARIES] - The Six-Domain Organism & Hive Command Suite
+# Each binary acts as a granular test case for specific RFC protocols
+# or demonstrates the integrated, end-to-end reflex arc.
 # ====================================================================
 
+# [RFC-001] AICENT: The Brain (Master Commander - Full Organism Simulation)
 [[bin]]
 name = "aicent-organism"
 path = "src/bin/aicent-organism.rs"
 
+# [RFC-002] RTTP: The Nerves (Neural Pulse Transmission Demo)
 [[bin]]
 name = "rttp-demo"
 path = "src/bin/rttp-demo.rs"
 
+# [RFC-003] RPKI: The Immunity (Pathogen Isolation Demo)
 [[bin]]
 name = "rpki-demo"
 path = "src/bin/rpki-demo.rs"
 
+# [RFC-004] ZCMK: The Blood (Value Circulation Demo)
 [[bin]]
 name = "zcmk-demo"
 path = "src/bin/zcmk-demo.rs"
 
+# [RFC-005] GTIOT: The Body (Sensory-Motor Reflex Demo)
 [[bin]]
 name = "gtiot-demo"
 path = "src/bin/gtiot-demo.rs"
 
+# [RFC-006] AICENT-NET: The Hive (Collective Intelligence Simulation)
 [[bin]]
 name = "aicent-net-demo"
 path = "src/bin/aicent-net-demo.rs"
 
 # ====================================================================
 # [DEPENDENCIES] - Integrated Workspace DNA
+# All dependencies are inherited from the root aicent-stack/Cargo.toml,
+# ensuring maximum compatibility and minimum build time.
 # ====================================================================
 
 [dependencies]
-# Core Organs from Workspace
-aicent     = { workspace = true }
-rttp       = { workspace = true }
-rpki       = { workspace = true }
-zcmk       = { workspace = true }
-gtiot      = { workspace = true }
-aicent-net = { workspace = true }
+# Core Sovereign Domains (Directly referenced via workspace)
+aicent     = { workspace = true, features = ["std"] }
+rttp       = { workspace = true, features = ["std"] }
+rpki       = { workspace = true, features = ["std"] }
+zcmk       = { workspace = true, features = ["std"] }
+gtiot      = { workspace = true, features = ["std"] }
+aicent-net = { workspace = true, optional = true, features = ["std"] }
 
-# --- Utilities & Telemetry ---
+# --- Simulation Utilities & Telemetry ---
 anyhow = { workspace = true }
-serde  = { workspace = true, features = ["derive"] }
-tokio  = { workspace = true, features = ["full"] }
-rand   = { workspace = true }
+rand = { workspace = true }
 tracing = { workspace = true }
 
+# --- Runtime Environment ---
+# Tokio is used for the simulation's async runtime.
+tokio = { workspace = true, features = ["full"] }
+
+[features]
+default = ["std"]
+# [Standard v1.0] Standard library support for demo execution environments.
+# Explicitly re-exporting 'std' for all core dependencies.
+std = [
+    "aicent/std", "rttp/std", "rpki/std", "zcmk/std", "gtiot/std", 
+    "aicent-net/std", "tokio/full"
+]
+
+# [RFC-006] Enable Hive-Mind simulation for collective reflex demonstrations.
+swarm-simulation = ["aicent-net/std"]
+
 [dev-dependencies]
-# Benchmarking tools for sub-ms audit
-criterion = "0.5"
+# Benchmarking tools for validating sub-ms end-to-end latency targets.
+criterion = { workspace = true }
