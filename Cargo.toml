@@ -69,9 +69,9 @@ thiserror = "1.0"
 tracing = "0.1"
 rand = "0.8"
 
-# --- 🛡️ 关键修复：将测试工具也纳入总部军火库 ---
+# --- 🛡️ Critical Fix: Add testing tools to the headquarters arsenal ---
 criterion = "0.5"
-# 确保所有特性都在这里定义
+# Ensure all features are defined here.
 nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
 
 [profile.release]
