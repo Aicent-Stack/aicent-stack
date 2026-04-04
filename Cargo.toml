@@ -27,7 +27,7 @@ authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-rust-version = "1.75"
+rust-version = "1.85"
 
 [workspace.dependencies]
 # --- Internal Domain Linking ---
