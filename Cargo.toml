@@ -33,16 +33,16 @@ license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
 rust-version = "1.75"
-keywords = ["sovereign-ai", "low-latency", "rfc-standard", "robotics", "fintech"]
+keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade"]
 categories = ["asynchronous", "embedded", "network-programming", "cryptography"]
 
 # ====================================================================
-# [WORKSPACE DEPENDENCIES] - The Central Armory
-# All sub-crates inherit these versions to ensure metabolic consistency.
+# [WORKSPACE DEPENDENCIES] - The Organism's Integrated DNA
+# All sub-crates inherit these industrial-grade versions.
 # ====================================================================
 
 [workspace.dependencies]
-# --- Core Organism Internal Linking ---
+# --- Internal Cross-Domain Authority ---
 aicent     = { path = "aicent" }
 rttp       = { path = "rttp" }
 rpki       = { path = "rpki" }
@@ -50,40 +50,45 @@ zcmk       = { path = "zcmk" }
 gtiot      = { path = "gtiot" }
 aicent-net = { path = "aicent-net" }
 
-# --- High-Performance Neural Orchestration ---
+# --- High-Performance Asynchronous Backbone ---
+# Utilizing Tokio 1.37+ for mission-critical task orchestration.
 tokio = { version = "1.37", features = ["full"] }
-rayon = "1.10"                 # Parallel SIMD scanning for RPKI
-crossbeam = "0.8"              # Lock-free data structures
-crossbeam-channel = "0.5"      # High-frequency messaging
-crossbeam-queue = "0.3"        # Nanosecond task shunting for ZCMK
-parking_lot = "0.12"           # Faster atomic locks for 1.2kHz loops
-once_cell = "1.19"             # Safe static initialization of global states
-async-trait = "0.1"            # Cognitive trait abstractions
-futures = "0.3"                # High-throughput Hive-Mind streams
+rayon = "1.10"                 # For SIMD-parallel RPKI verification lanes
+crossbeam = "0.8"              # Lock-free data primitives for sub-ms reflex arcs
+crossbeam-queue = "0.3"        # Nanosecond task shunting for RTBA matching
+crossbeam-channel = "0.5"      # High-frequency inter-organ messaging
+parking_lot = "0.12"           # Hardware-optimized mutexes (HFT-grade)
+once_cell = "1.19"             # Safe thread-safe initialization of global manifolds
+async-trait = "0.1"            # Standardization of cognitive orchestration traits
+futures = "0.3"                # High-throughput stream handling for Hive-sync
 
-# --- Data Sovereignty & Memory Safety ---
+# --- Data Integrity & Memory Sovereignty ---
+# Strict zero-copy buffer management and 128-bit precision math.
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-bytes = "1.6"                  # Zero-copy buffer management for Pulse Frames
+bytes = "1.6"                  # Zero-copy RTTP Pulse Frame buffers
 smallvec = "1.13"              # Stack-allocation optimization for motor primitives
-zeroize = "1.7"                # Secure memory clearing for cryptographic seeds
+num-traits = "0.2"             # Precision math for 10^-12 picotoken clearing
+zeroize = "1.7"                # [SECURITY] Secure memory clearing for cryptographic seeds
 
-# --- Cryptography & Integrity (The Immune DNA) ---
-ring = "0.17"                  # Core steganography for tensor watermarking
-sha2 = "0.10"                  # Merkle-DAG hashing for identity chains
+# --- Cryptography & Physical Guard (The Immune DNA) ---
+ring = "0.17"                  # Core crypto for In-band Tensor Watermarking
+sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain provenance
 
-# --- Hardware Adaptation (Embodied Intelligence) ---
+# --- Hardware-Native Adaptation (Embodied Intelligence) ---
+# Embedded Rust primitives for 1.2 kHz robotics loops.
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
 embassy-time = "0.3"
 
-# --- Error Handling & Telemetry ---
+# --- Telemetry & Diagnostics ---
 anyhow = "1.0"
 thiserror = "1.0"
-tracing = "0.1"                # Industrial-grade telemetry and diagnostics
-rand = "0.8"                   # For entropy and chaos-testing simulations
+tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
+rand = "0.8"                   # Simulated entropy for RPKI chaos testing
 
 # ====================================================================
-# [WORKSPACE LINTS] - Quality Enforcement (Carrier-Grade Rigor)
+# [WORKSPACE LINTS] - Quality Gating
+# Enforcing strict engineering rigor across the 10-repo empire.
 # ====================================================================
 
 [workspace.lints.rust]
@@ -91,18 +96,19 @@ unsafe_op_in_unsafe_fn = "warn"
 missing_docs = "warn"
 
 [workspace.lints.clippy]
-# Enforce security and performance standards
+# Disallow unoptimized or insecure code patterns
 undocumented_unsafe_blocks = "warn"
 manual_memcpy = "warn"
 perf = "warn"
 pedantic = "warn"
 
 # ====================================================================
-# [PROFILES] - Optimized for Sub-Millisecond Finality
+# [RELEASE PROFILES] - Engineered for Sub-Millisecond Finality
+# This configuration generates the fastest possible machine code.
 # ====================================================================
 
 [profile.release]
-opt-level = 3                 # Maximum optimization for production reflexes
-lto = "fat"                   # Link-Time Optimization for cross-crate speed
-codegen-units = 1             # Better binary density for hardware caches
-panic = "abort"               # Ensure absolute determinism in failure states
+opt-level = 3                 # Maximum optimization for production homeostasis
+lto = "fat"                   # Full Link-Time Optimization for cross-crate speed
+codegen-units = 1             # Better binary density and cache locality
+panic = "abort"               # Ensures absolute determinism; avoids stack unwinding tax
