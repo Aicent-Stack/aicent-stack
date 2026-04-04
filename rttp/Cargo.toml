@@ -1,0 +1,16 @@
+[package]
+name = "rttp"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+serde.workspace = true
+anyhow.workspace = true
+bytes.workspace = true
+tokio.workspace = true
+smallvec.workspace = true
+crossbeam.workspace = true
+once_cell.workspace = true
