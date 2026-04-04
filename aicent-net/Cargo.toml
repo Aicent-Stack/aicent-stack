@@ -10,7 +10,7 @@ homepage = "http://aicent.net"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-006-AICENT-NET.md"
 keywords = ["sovereign-ai", "collective-intelligence", "rfc-006", "operational-grid"]
 categories = ["distributed-computing", "network-programming"]
-rust-version = "1.75"
+rust-version = "1.85"
 
 [dependencies]
 # --- Core Domain Orchestration ---
