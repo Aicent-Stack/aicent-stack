@@ -26,7 +26,7 @@ members = [
 resolver = "2"
 
 [workspace.package]
-version = "0.1.0"
+version = "1.0.0" # Official Standard 1.0 release
 edition = "2021"
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
@@ -34,7 +34,7 @@ repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
 rust-version = "1.75"
 keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade"]
-categories = ["asynchronous", "embedded", "network-programming", "cryptography"]
+categories = ["asynchronous", "embedded", "network-programming", "cryptography", "distributed-computing"]
 
 # ====================================================================
 # [WORKSPACE DEPENDENCIES] - The Organism's Integrated DNA
@@ -42,7 +42,7 @@ categories = ["asynchronous", "embedded", "network-programming", "cryptography"]
 # ====================================================================
 
 [workspace.dependencies]
-# --- Internal Cross-Domain Authority ---
+# --- Internal Domain Linking (Cross-Domain Authority) ---
 aicent     = { path = "aicent" }
 rttp       = { path = "rttp" }
 rpki       = { path = "rpki" }
@@ -53,16 +53,16 @@ aicent-net = { path = "aicent-net" }
 # --- High-Performance Asynchronous Backbone ---
 # Utilizing Tokio 1.37+ for mission-critical task orchestration.
 tokio = { version = "1.37", features = ["full"] }
-rayon = "1.10"                 # For SIMD-parallel RPKI verification lanes
+rayon = "1.10"                 # Parallel SIMD scanning for RFC-003 pipelines
 crossbeam = "0.8"              # Lock-free data primitives for sub-ms reflex arcs
 crossbeam-queue = "0.3"        # Nanosecond task shunting for RTBA matching
 crossbeam-channel = "0.5"      # High-frequency inter-organ messaging
-parking_lot = "0.12"           # Hardware-optimized mutexes (HFT-grade)
+parking_lot = "0.12"           # Hardware-optimized mutexes for HFT-grade logic
 once_cell = "1.19"             # Safe thread-safe initialization of global manifolds
-async-trait = "0.1"            # Standardization of cognitive orchestration traits
-futures = "0.3"                # High-throughput stream handling for Hive-sync
+async-trait = "0.1"            # Trait abstraction for Sovereign AI Identity
+futures = "0.3"                # High-throughput stream handling for Hive-sync (RFC-006)
 
-# --- Data Integrity & Memory Sovereignty ---
+# --- Data Sovereignty & Memory Safety ---
 # Strict zero-copy buffer management and 128-bit precision math.
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
@@ -72,11 +72,12 @@ num-traits = "0.2"             # Precision math for 10^-12 picotoken clearing
 zeroize = "1.7"                # [SECURITY] Secure memory clearing for cryptographic seeds
 
 # --- Cryptography & Physical Guard (The Immune DNA) ---
-ring = "0.17"                  # Core crypto for In-band Tensor Watermarking
+# Core steganography and hashing for RFC-003 identity chains.
+ring = "0.17"                  # Hardware-accelerated crypto for tensor watermarking
 sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain provenance
 
 # --- Hardware-Native Adaptation (Embodied Intelligence) ---
-# Embedded Rust primitives for 1.2 kHz robotics loops.
+# Hard real-time primitives for 1.2 kHz robotics loops.
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
 embassy-time = "0.3"
 
@@ -87,8 +88,8 @@ tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
 rand = "0.8"                   # Simulated entropy for RPKI chaos testing
 
 # ====================================================================
-# [WORKSPACE LINTS] - Quality Gating
-# Enforcing strict engineering rigor across the 10-repo empire.
+# [WORKSPACE LINTS] - Quality Gating (Carrier-Grade Rigor)
+# Enforcing strict engineering standards across the 10-repo empire.
 # ====================================================================
 
 [workspace.lints.rust]
@@ -96,7 +97,7 @@ unsafe_op_in_unsafe_fn = "warn"
 missing_docs = "warn"
 
 [workspace.lints.clippy]
-# Disallow unoptimized or insecure code patterns
+# Enforce absolute security and performance optimization
 undocumented_unsafe_blocks = "warn"
 manual_memcpy = "warn"
 perf = "warn"
