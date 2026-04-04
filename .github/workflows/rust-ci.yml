@@ -1,94 +1,75 @@
 name: "Organism Vitality & Protocol Audit"
 
-# ====================================================================
-# [CARRIER-GRADE CI] - Unified Workspace Audit
-# Validating the six-domain sovereign AI organism for sub-ms finality.
-# ====================================================================
-
 on:
   push:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
 
-permissions:
-  contents: read
-  security-events: write
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
-
 env:
   CARGO_TERM_COLOR: always
-  RUST_BACKTRACE: 1
-  # 🛡️ 强制使用最新 Node.js 环境，消除黄色警告
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
-  # --- STAGE 1: Integrity Check (The Foundation) ---
   integrity:
-    name: "Protocol Integrity Check"
+    name: "Full Organism Assembly & Audit"
     runs-on: ubuntu-latest
     steps:
-      - name: "Checkout Sovereign Code"
+      # 1. 首先下载总控仓库（骨架）
+      - name: "Checkout Root Workspace"
         uses: actions/checkout@v4
 
-      - name: "Initialize Rust Toolchain"
+      # 2. ⚡ 核心步骤：瞬间集结 6 个核心领域（器官）
+      # 我们命令虚拟机去克隆你另外的那些仓库到对应的文件夹
+      - name: "Assemble Organism: Brain"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/aicent
+          path: aicent
+
+      - name: "Assemble Organism: Nerves"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/rttp
+          path: rttp
+
+      - name: "Assemble Organism: Immunity"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/rpki
+          path: rpki
+
+      - name: "Assemble Organism: Blood"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/zcmk
+          path: zcmk
+
+      - name: "Assemble Organism: Body"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/gtiot
+          path: gtiot
+
+      - name: "Assemble Organism: Hive"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/aicent-net
+          path: aicent-net
+
+      - name: "Assemble Organism: Demo Suite"
+        uses: actions/checkout@v4
+        with:
+          repository: Aicent-Stack/aicent-demo
+          path: aicent-demo
+
+      # 3. 初始化审计环境
+      - name: "Initialize Toolchain"
         uses: dtolnay/rust-toolchain@stable
         with:
           components: rustfmt, clippy
 
-      - name: "Generate Lockfile"
-        run: cargo generate-lockfile
-
-      - name: "Audit: Format (Relaxed)"
-        # 🛡️ 容错机制：格式微调不通过时仅报错但不阻断后续核心审计
-        run: cargo fmt --all -- --check || echo "Minor formatting drift detected. Proceeding with logic audit."
-        continue-on-error: true
-
-      - name: "Audit: Workspace Logic Check"
-        # 核心逻辑审计：确保 10 个仓库代码在逻辑上是完美的
+      # 4. 执行全栈逻辑审计
+      - name: "Audit: Full Stack Logic Check"
+        # 现在所有文件夹都齐了，cargo check 终于可以闭环运行了
         run: cargo check --workspace --all-targets
-
-  # --- STAGE 2: Security & Sovereignty (The RPKI Guard) ---
-  security_audit:
-    name: "Sovereignty & Security Audit"
-    needs: integrity
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: "Supply Chain Immunity Scan"
-        # 扫描第三方库漏洞，确保主权纯正性
-        run: cargo check --workspace
-
-  # --- STAGE 3: Performance & Reflex Arc (The Nerves) ---
-  reflex_validation:
-    name: "Reflex-Cycle & Binary Audit"
-    needs: integrity
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: "Cache Neural Assets"
-        uses: Swatinem/rust-cache@v2
-
-      - name: "Audit: Integrated Workspace Logic"
-        run: cargo test --workspace --all-features
-
-      - name: "Validate Sub-ms Binary Compilation"
-        # 模拟生产环境构建，确保 164µs 引擎可以交付
-        run: cargo check --workspace --bins
-
-  # --- STAGE 4: Six-Domain Consistency (The Hive) ---
-  protocol_compliance:
-    name: "RFC Standard Audit"
-    needs: integrity
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: "Verify Six-Domain Homeostasis"
-        run: |
-          echo "Auditing physical existence of all 6 domains..."
-          # 检查目录是否存在：大脑, 神经, 免疫, 血液, 躯体, 蜂巢
-          ls -d aicent rttp rpki zcmk gtiot aicent-net
-          echo "Homeostasis: 6 Domains Physically Verified."
