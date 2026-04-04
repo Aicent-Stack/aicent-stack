@@ -1,0 +1,20 @@
+[package]
+name = "gtiot"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+rttp.workspace = true
+rpki.workspace = true
+zcmk.workspace = true
+embassy-executor.workspace = true
+embassy-time.workspace = true
+smallvec.workspace = true
+once_cell.workspace = true
+serde.workspace = true
+anyhow.workspace = true
+tracing.workspace = true
+tokio.workspace = true
