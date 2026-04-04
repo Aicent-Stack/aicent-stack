@@ -5,46 +5,57 @@ version.workspace = true
 edition = "2024" # Explicitly set edition to 2024 for consistency
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
-repository = "https://github.com/Aicent-Stack/gtiot" # Point to its own repository
+repository = "https://github.com/Aicent-Stack/gtiot" # Points to its own independent repository
 homepage = "http://gtiot.com"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-005-GTIOT-BODY.md"
-keywords = ["robotics", "embodied-ai", "rfc-005", "action-collapse", "proprioception", "128-bit-atomic"]
+keywords = ["robotics", "edge-computing", "rfc-005", "action-collapse", "proprioception", "128-bit-atomic"]
 categories = ["embedded", "hardware-support", "no-std", "science"]
 rust-version = "1.85" # Explicitly set rust-version to 1.85 for consistency
 
 [dependencies]
-# --- Core Organism Linking (Unidirectional Dependency Flow) ---
-# The Body reacts to Nerves (RTTP) and requires Immunity (RPKI) and Blood (ZCMK)
-rttp = { workspace = true }
-rpki = { workspace = true }
-zcmk = { workspace = true }
+# --- Core Organism Linking ---
+# GTIOT operates as the physical manifestation, requiring real-time pulses from Nerves (RTTP)
+# and ensuring security via Immunity (RPKI) and value transfer via Blood (ZCMK).
+rttp = { workspace = true, features = ["std"] } # Nerves provide standard std transport
+rpki = { workspace = true, features = ["std"] } # Immunity for hardware-level verification
+zcmk = { workspace = true, features = ["std"] } # Blood for ZCMK clearing
 
 # --- Hard Real-Time & Embedded Execution ---
-# [RFC-005] Embassy executor for sub-millisecond control loops (1200 Hz)
+# [RFC-005] Embassy ecosystem for sub-millisecond control loops (1.2 kHz).
+# These are critical for deterministic actuation.
 embassy-executor = { workspace = true }
 embassy-time     = { workspace = true }
 
 # --- Kinetic Primitives & Mathematics ---
-# [PHYSICS] Linear algebra for 12-DOF kinematics and motor torque vectors
-nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
-# [PERF] Zero-allocation storage for high-frequency motor trajectories
+# [PHYSICS] Utilizes Nalgebra for 12-DOF robotics and complex control algorithms.
+nalgebra = { version = "0.32", default-features = false, features = ["libm"] } 
+# [PERF] Zero-allocation storage for high-frequency motor trajectories and sensor data.
 smallvec = { workspace = true, features = ["serde"] }
 
 # --- Logic, State & Telemetry ---
-serde     = { workspace = true, features = ["derive"] }
-anyhow    = { workspace = true }
-tracing   = { workspace = true } # High-fidelity proprioceptive telemetry
-once_cell = { workspace = true } # Global state manifold initialization
-tokio     = { workspace = true, features = ["sync", "rt"] } # Simulation bridge
+serde = { workspace = true, features = ["derive"] }
+anyhow = { workspace = true }
+tracing = { workspace = true } # High-fidelity telemetry for physical state monitoring
+once_cell = { workspace = true } # Safe static initialization of hardware interfaces
+tokio = { workspace = true, features = ["sync", "rt"] } # For simulation environments
 
 [features]
 default = ["std"]
 # [Standard v1.0] Standard library support for high-end edge compute nodes.
-# Explicitly re-exporting std for all downstream dependencies for full compatibility.
-std = ["serde/std", "anyhow/std", "rttp/std", "rpki/std", "zcmk/std", "tokio/rt", "tokio/sync"]
-# [RFC-005] Bare-metal support for industrial robotics (MCUs/NPUs)
+# This enables all core functionalities on platforms with a std environment.
+std = [
+    "serde/std", 
+    "anyhow/std", 
+    "rttp/std", 
+    "rpki/std", 
+    "zcmk/std", 
+    "tokio/rt", 
+    "tokio/sync"
+]
+# [RFC-005] Bare-metal support for robotics MCUs/NPUs.
+# Disables std features, relying on core primitives.
 no_std = ["nalgebra/libm"]
 
 [dev-dependencies]
-# Benchmarking for the 200µs Action-Collapse performance target
+# Performance benchmarking for 1.2 kHz reflex loop determinism.
 criterion = { workspace = true }
