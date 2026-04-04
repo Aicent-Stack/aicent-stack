@@ -1,22 +1,44 @@
 [package]
 name = "aicent-net"
+description = "AICENT-NET: Global Operational Grid and Collective Intelligence Protocol [RFC-006]"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
+homepage = "http://aicent.net"
+documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-006-AICENT-NET.md"
+keywords = ["hive-mind", "distributed-grid", "rfc-006", "kinetic-resonance", "planetary-scale"]
+categories = ["distributed-computing", "network-programming", "science"]
+rust-version = "1.75"
 
 [dependencies]
-aicent.workspace = true
-rttp.workspace = true
-rpki.workspace = true
-zcmk.workspace = true
-gtiot.workspace = true
-async-trait.workspace = true
-serde.workspace = true
-crossbeam.workspace = true
-parking_lot.workspace = true
-once_cell.workspace = true
-tokio.workspace = true
-tracing.workspace = true
-futures.workspace = true
+# --- Full-Spectrum Domain Integration ---
+# The Hive orchestrates all five lower domains to achieve planetary consensus.
+aicent = { workspace = true }
+rttp   = { workspace = true }
+rpki   = { workspace = true }
+zcmk   = { workspace = true }
+gtiot  = { workspace = true }
+
+# --- Planetary Orchestration & Grid Logic ---
+# High-concurrency traits and async streams for hive-wide resonance.
+async-trait = { workspace = true }
+futures     = { workspace = true }
+tokio       = { workspace = true, features = ["full"] }
+
+# --- Distributed Coordination & Memory Manifold ---
+# [PERF] High-performance locks and sync for global state shunting
+crossbeam     = { workspace = true }
+parking_lot   = { workspace = true } 
+once_cell     = { workspace = true } 
+
+# --- Data & Telemetry ---
+serde = { workspace = true, features = ["derive"] }
+tracing = { workspace = true }
+
+[features]
+default = ["std"]
+std = ["serde/std"]
+# [RFC-006] Enable experimental swarm kinetic resonance simulations
+swarm-simulation = []
