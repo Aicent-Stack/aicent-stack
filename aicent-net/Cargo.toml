@@ -2,37 +2,49 @@
 name = "aicent-net"
 description = "AICENT-NET: Global Operational Grid and Collective Intelligence Protocol [RFC-006]"
 version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
+edition = "2024" # Explicitly set edition to 2024 for consistency
+authors = ["Aicent Stack Team <lee@aicent.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/Aicent-Stack/aicent-net" # Points to its own independent repository
 homepage = "http://aicent.net"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-006-AICENT-NET.md"
-keywords = ["sovereign-ai", "collective-intelligence", "rfc-006", "operational-grid"]
-categories = ["distributed-computing", "network-programming"]
-rust-version = "1.85"
+keywords = ["hive-mind", "swarm-intelligence", "rfc-006", "operational-grid", "planetary-scale", "128-bit-atomic"]
+categories = ["distributed-computing", "network-programming", "science", "high-performance"]
+rust-version = "1.85" # Explicitly set rust-version to 1.85 for consistency
 
 [dependencies]
-# --- Core Domain Orchestration ---
-# The Hive coordinates individual nodes (Brain, Nerves, Immunity, Blood, Body)
-aicent = { workspace = true }
-rttp   = { workspace = true }
-rpki   = { workspace = true }
-zcmk   = { workspace = true }
-gtiot  = { workspace = true }
+# --- Core Organism Linking ---
+# The Hive orchestrates all individual organs via the RTTP backbone.
+aicent = { workspace = true, features = ["std"] } # Brain: Sovereign Identity & Orchestration
+rttp = { workspace = true, features = ["std"] }   # Nerves: Low-latency transmission
+rpki = { workspace = true, features = ["std"] }   # Immunity: Security protocols
+zcmk = { workspace = true, features = ["std"] }   # Blood: Value settlement
+gtiot = { workspace = true, features = ["std"] }  # Body: Physical execution
 
 # --- Planetary Orchestration & Grid Logic ---
-async-trait.workspace = true
-serde = { workspace = true, features = ["derive"] }
+# [PERF] High-concurrency traits and async streams for global state synchronization.
+async-trait = { workspace = true }
+futures     = { workspace = true }
+
+# --- Distributed Coordination & Memory Manifold ---
+# [PERF] Utilizing 128-bit atomics for critical grid state and consensus.
 crossbeam = { workspace = true }
-parking_lot = { workspace = true }
-once_cell = { workspace = true }
-tokio = { workspace = true, features = ["full"] }
-tracing = { workspace = true }
-futures = { workspace = true }
+parking_lot = { workspace = true } # HFT-grade synchronization for global state
+once_cell = { workspace = true }   # Safe static initialization of the grid backbone
+
+# --- Data, Telemetry & Serialization ---
+serde = { workspace = true, features = ["derive"] }
+anyhow = { workspace = true }
+tracing = { workspace = true }      # Planetary-scale telemetry for hive events
 
 [features]
 default = ["std"]
-std = ["serde/std"]
-# [RFC-006] Enable collective intelligence simulations
+# [Standard v1.0] Standard library support for the global operational grid.
+std = ["serde/std", "anyhow/std", "aicent/std", "rttp/std", "rpki/std", "zcmk/std", "gtiot/std", "tokio/full"]
+
+# [RFC-006] Enable experimental swarm kinetic resonance simulations.
 swarm-simulation = []
+
+[dev-dependencies]
+# Performance benchmarking for <100µs collective finality targets.
+criterion = { workspace = true }
