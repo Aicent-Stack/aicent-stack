@@ -8,13 +8,13 @@ license.workspace = true
 repository.workspace = true
 homepage = "http://aicent.net"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-006-AICENT-NET.md"
-keywords = ["hive-mind", "distributed-grid", "rfc-006", "kinetic-resonance", "planetary-scale"]
-categories = ["distributed-computing", "network-programming", "science"]
+keywords = ["sovereign-ai", "collective-intelligence", "rfc-006", "operational-grid"]
+categories = ["distributed-computing", "network-programming"]
 rust-version = "1.75"
 
 [dependencies]
-# --- Full-Spectrum Domain Integration ---
-# The Hive orchestrates all five lower domains to achieve planetary consensus.
+# --- Core Domain Orchestration ---
+# The Hive coordinates individual nodes (Brain, Nerves, Immunity, Blood, Body)
 aicent = { workspace = true }
 rttp   = { workspace = true }
 rpki   = { workspace = true }
@@ -22,23 +22,17 @@ zcmk   = { workspace = true }
 gtiot  = { workspace = true }
 
 # --- Planetary Orchestration & Grid Logic ---
-# High-concurrency traits and async streams for hive-wide resonance.
-async-trait = { workspace = true }
-futures     = { workspace = true }
-tokio       = { workspace = true, features = ["full"] }
-
-# --- Distributed Coordination & Memory Manifold ---
-# [PERF] High-performance locks and sync for global state shunting
-crossbeam     = { workspace = true }
-parking_lot   = { workspace = true } 
-once_cell     = { workspace = true } 
-
-# --- Data & Telemetry ---
+async-trait.workspace = true
 serde = { workspace = true, features = ["derive"] }
+crossbeam = { workspace = true }
+parking_lot = { workspace = true }
+once_cell = { workspace = true }
+tokio = { workspace = true, features = ["full"] }
 tracing = { workspace = true }
+futures = { workspace = true }
 
 [features]
 default = ["std"]
 std = ["serde/std"]
-# [RFC-006] Enable experimental swarm kinetic resonance simulations
+# [RFC-006] Enable collective intelligence simulations
 swarm-simulation = []
