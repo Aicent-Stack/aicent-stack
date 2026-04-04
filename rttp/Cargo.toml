@@ -9,37 +9,37 @@ repository.workspace = true
 homepage = "http://rttp.com"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-002-RTTP-NERVES.md"
 keywords = ["neural-transport", "low-latency", "rfc-002", "pulse-frame", "multicast"]
-categories = ["network-programming", "asynchronous", "embedded"]
+categories = ["network-programming", "asynchronous", "embedded", "distributed-computing"]
 rust-version = "1.75"
 
 [dependencies]
 # --- Core Organism Linking ---
-# Integrating Immunity and Blood layers at the wire level for "Reflex Trinity"
+# Integrating RPKI (RFC-003) and ZCMK (RFC-004) at the wire level for "Reflex Trinity"
 rpki.workspace = true
 zcmk.workspace = true
 
 # --- Neural Transport Primitives ---
 serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
-bytes = { workspace = true, features = ["serde"] } # Zero-copy packet buffers
-smallvec.workspace = true                          # Stack-allocated pulse fragments
+bytes = { workspace = true, features = ["serde"] } # Zero-copy buffer management
+tokio = { workspace = true, features = ["net", "rt", "sync"] }
 
 # --- High-Performance Backbone ---
-# tokio features optimized for real-time neural dispatch
-tokio = { workspace = true, features = ["net", "rt", "sync"] }
-crossbeam = { workspace = true }                   # Multi-core shunting
-crossbeam-channel = { workspace = true }           # High-freq dispatch
-once_cell = { workspace = true }
-tracing = { workspace = true }                    # Telemetry for nerve-impulse audit
+smallvec.workspace = true                          # Stack-allocated pulse fragments
+crossbeam = { workspace = true }                   # Lock-free shunting for neural paths
+crossbeam-channel = { workspace = true }           # High-frequency dispatch
+crossbeam-queue = { workspace = true }             # Nanosecond-speed frame queues
+once_cell = { workspace = true }                   # Static initialization
+tracing = { workspace = true }                    # Industrial-grade telemetry
 
 [features]
 default = ["std"]
 std = ["serde/std", "anyhow/std"]
-# [RFC-002] Performance-critical hardware offload hooks (DPDK/eBPF)
-hardware-accelerated = []
-# [RFC-005] Bare-metal support for GTIOT robotics nodes
+# [RFC-002] Placeholder for bare-metal/embedded hardware offloading
 embedded = []
+# [RFC-002] Hook for future XDP/DPDK/RDMA hardware acceleration
+hardware-accelerated = []
 
 [dev-dependencies]
-# Performance auditing for sub-420µs sync targets
+# Benchmarking for <420µs sync targets
 criterion = "0.5"
