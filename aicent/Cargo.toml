@@ -1,19 +1,44 @@
 [package]
 name = "aicent"
+description = "Aicent Brain: Sovereign AI Identity and Cognitive Orchestration Protocol [RFC-001]"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
+homepage = "http://aicent.com"
+documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-001-AICENT-BRAIN.md"
+keywords = ["sovereign-ai", "orchestration", "cognitive-hub", "rfc-001", "aicent-stack"]
+categories = ["ai", "asynchronous", "science", "distributed-computing"]
+rust-version = "1.75"
 
 [dependencies]
+# --- Core Domain Orchestration ---
+# The Brain orchestrates the nervous system (RTTP), immunity (RPKI), 
+# value metabolism (ZCMK), and physical execution (GTIOT).
 rttp.workspace = true
 rpki.workspace = true
 zcmk.workspace = true
 gtiot.workspace = true
-serde.workspace = true
+
+# --- Hive Intelligence (Optional) ---
+# [RFC-006] The Brain interfaces with the Grid for collective cognition.
+aicent-net = { workspace = true, optional = true }
+
+# --- Cognitive & Logic Layer ---
+serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
-tokio.workspace = true
-tracing.workspace = true
-async-trait.workspace = true
-once_cell.workspace = true
+tokio = { workspace = true, features = ["full"] }
+tracing = { workspace = true }        # Industrial-grade telemetry for cognitive cycles
+async-trait = { workspace = true }    # Orchestration Trait abstraction
+once_cell = { workspace = true }      # Safe global state management
+
+[features]
+default = ["std"]
+std = ["serde/std", "anyhow/std"]
+# [RFC-006] Enable Hive-Mind consensus
+hive-sync = ["aicent-net"]
+
+[dev-dependencies]
+# Benchmarking tools for sub-ms cognitive resolution
+criterion = "0.5"
