@@ -75,7 +75,7 @@ sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain provenance
 
 # --- Hardware-Native Adaptation (Embodied Intelligence) ---
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
-embassy-time = "0.3"
+embassy-time = { version = "0.3", features = ["std"] } # Explicitly enable std for embassy-time
 
 # --- Telemetry & Diagnostics ---
 anyhow = "1.0"
@@ -83,8 +83,10 @@ thiserror = "1.0"
 tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
 rand = "0.8"                   # Simulated entropy for RPKI chaos testing
 
-# --- 🛡️ 关键修复：将 criterion 提升为 workspace 依赖 ---
+# --- 🛡️ Dev Tools & Testing ---
 criterion = "0.5"
+nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
+
 
 # ====================================================================
 # [WORKSPACE LINTS] - Quality Gating (Carrier-Grade Rigor)
