@@ -1,20 +1,46 @@
 [package]
 name = "rpki"
+description = "RPKI: Parallel Tensor Watermarking and Pathogen Isolation Protocol [RFC-003]"
 version.workspace = true
 edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
+homepage = "https://rpki.com"
+documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-003-RPKI-IMMUNITY.md"
+keywords = ["sovereign-ai", "zero-trust", "tensor-watermarking", "rfc-003", "pathogen-isolation"]
+categories = ["cryptography", "network-programming", "security", "hardware-acceleration"]
+rust-version = "1.75"
 
 [dependencies]
+# --- Core Organism Linking ---
 rttp.workspace = true
+
+# --- Parallel Immune Pipeline ---
+# [RFC-003] SIMD-level parallel verification lanes (Rayon)
 rayon.workspace = true
 crossbeam.workspace = true
 crossbeam-channel.workspace = true
-sha2.workspace = true
-ring.workspace = true
-zeroize.workspace = true
-once_cell.workspace = true
-serde.workspace = true
+parking_lot.workspace = true      # High-performance sync for immune triage
+
+# --- Cryptographic DNA (Zero-Trust Provenance) ---
+# [PERF] Hardware-native crypto primitives
+sha2.workspace = true            # Merkle-DAG chain integrity
+ring.workspace = true            # Hardware-accelerated signing/verification
+zeroize = { workspace = true, features = ["derive"] } # [SECURITY] Memory-safe credential clearing
+
+# --- Diagnostics & Logic ---
+serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
-tracing.workspace = true
+tracing.workspace = true         # High-fidelity pathogen audit trails
+once_cell.workspace = true
+
+[features]
+default = ["std"]
+std = ["serde/std", "anyhow/std", "rttp/std"]
+# [RFC-003] Enable AVX-512/SIMD acceleration for tensor watermarking
+simd-acceleration = []
+
+[dev-dependencies]
+# Benchmarking quarantine latency targets (<300µs)
+criterion = "0.5"
