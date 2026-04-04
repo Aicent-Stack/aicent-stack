@@ -2,45 +2,49 @@
 name = "gtiot"
 description = "GTIOT: High-Fidelity Edge Fusion and Action-Collapse Framework [RFC-005]"
 version.workspace = true
-edition.workspace = true
-authors.workspace = true
-license.workspace = true
-repository.workspace = true
+edition = "2024" # Explicitly set edition to 2024 for consistency
+authors = ["Aicent Stack Team <lee@aicent.com>"]
+license = "Apache-2.0"
+repository = "https://github.com/Aicent-Stack/gtiot" # Point to its own repository
 homepage = "http://gtiot.com"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-005-GTIOT-BODY.md"
-keywords = ["robotics", "edge-computing", "rfc-005", "action-collapse", "proprioception"]
-categories = ["embedded", "hardware-support", "no-std"]
-rust-version = "1.85"
+keywords = ["robotics", "embodied-ai", "rfc-005", "action-collapse", "proprioception", "128-bit-atomic"]
+categories = ["embedded", "hardware-support", "no-std", "science"]
+rust-version = "1.85" # Explicitly set rust-version to 1.85 for consistency
 
 [dependencies]
-# --- Core Organism Linking ---
-# The Body reacts via Nerves (RTTP), governed by Immunity (RPKI) and Blood (ZCMK)
-rttp.workspace = true
-rpki.workspace = true
-zcmk.workspace = true
+# --- Core Organism Linking (Unidirectional Dependency Flow) ---
+# The Body reacts to Nerves (RTTP) and requires Immunity (RPKI) and Blood (ZCMK)
+rttp = { workspace = true }
+rpki = { workspace = true }
+zcmk = { workspace = true }
 
 # --- Hard Real-Time & Embedded Execution ---
-# [RFC-005] Embassy executor for sub-ms control loops (1.2 kHz)
-embassy-executor.workspace = true
-embassy-time.workspace = true
-# [PERF] Zero-allocation motor trajectory storage
-smallvec.workspace = true
-# [PHYSICS] Linear algebra for 12-DOF robotics and motor torque vectors
-nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
+# [RFC-005] Embassy executor for sub-millisecond control loops (1200 Hz)
+embassy-executor = { workspace = true }
+embassy-time     = { workspace = true }
 
-# --- Logic & Telemetry ---
-serde = { workspace = true, features = ["derive"] }
-anyhow.workspace = true
-tracing.workspace = true
-once_cell.workspace = true
-tokio = { workspace = true, features = ["sync"] } # Simulation bridge
+# --- Kinetic Primitives & Mathematics ---
+# [PHYSICS] Linear algebra for 12-DOF kinematics and motor torque vectors
+nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
+# [PERF] Zero-allocation storage for high-frequency motor trajectories
+smallvec = { workspace = true, features = ["serde"] }
+
+# --- Logic, State & Telemetry ---
+serde     = { workspace = true, features = ["derive"] }
+anyhow    = { workspace = true }
+tracing   = { workspace = true } # High-fidelity proprioceptive telemetry
+once_cell = { workspace = true } # Global state manifold initialization
+tokio     = { workspace = true, features = ["sync", "rt"] } # Simulation bridge
 
 [features]
 default = ["std"]
-std = ["serde/std", "anyhow/std", "rttp/std"]
-# [RFC-005] Bare-metal support for robotics MCUs/NPUs
+# [Standard v1.0] Standard library support for high-end edge compute nodes.
+# Explicitly re-exporting std for all downstream dependencies for full compatibility.
+std = ["serde/std", "anyhow/std", "rttp/std", "rpki/std", "zcmk/std", "tokio/rt", "tokio/sync"]
+# [RFC-005] Bare-metal support for industrial robotics (MCUs/NPUs)
 no_std = ["nalgebra/libm"]
 
 [dev-dependencies]
-# Benchmarking for 200µs Action-Collapse performance targets
-criterion = "0.5"
+# Benchmarking for the 200µs Action-Collapse performance target
+criterion = { workspace = true }
