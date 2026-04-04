@@ -5,12 +5,21 @@ edition.workspace = true
 authors.workspace = true
 license.workspace = true
 repository.workspace = true
+description = "RTTP: Sub-millisecond Neural Transport and Stateful Semantic Multicast [RFC-002]"
 
 [dependencies]
-serde.workspace = true
+# --- Protocol Primitives ---
+serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
-bytes.workspace = true
-tokio.workspace = true
+bytes = { workspace = true, features = ["serde"] }
+
+# --- High-Performance Backbone ---
+tokio = { workspace = true, features = ["net", "rt", "sync"] }
 smallvec.workspace = true
 crossbeam.workspace = true
 once_cell.workspace = true
+
+# --- Security & Provenance (Reflex Trinity Integration) ---
+# Explicit dependency helps the compiler trace the Reflex Trinity integrity
+rpki = { workspace = true }
+zcmk = { workspace = true }
