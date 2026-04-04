@@ -8,6 +8,7 @@ on:
 
 env:
   CARGO_TERM_COLOR: always
+  # 🛡️ 强制使用最新 Node 环境
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
@@ -15,12 +16,12 @@ jobs:
     name: "Full Organism Assembly & Audit"
     runs-on: ubuntu-latest
     steps:
-      # 1. 首先下载总控仓库（骨架）
+      # 1. 下载总控仓库（骨架）
       - name: "Checkout Root Workspace"
         uses: actions/checkout@v4
 
-      # 2. ⚡ 核心步骤：瞬间集结 6 个核心领域（器官）
-      # 我们命令虚拟机去克隆你另外的那些仓库到对应的文件夹
+      # 2. ⚡ 核心：将 6 个核心领域（器官）克隆到对应的子目录
+      # 这样虚拟机里就有了 aicent/ rttp/ 等文件夹，Cargo 就能找到它们了
       - name: "Assemble Organism: Brain"
         uses: actions/checkout@v4
         with:
@@ -63,7 +64,7 @@ jobs:
           repository: Aicent-Stack/aicent-demo
           path: aicent-demo
 
-      # 3. 初始化审计环境
+      # 3. 初始化 Rust 环境
       - name: "Initialize Toolchain"
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -71,5 +72,5 @@ jobs:
 
       # 4. 执行全栈逻辑审计
       - name: "Audit: Full Stack Logic Check"
-        # 现在所有文件夹都齐了，cargo check 终于可以闭环运行了
+        # 此时所有文件夹在虚拟机里已经对齐，不再报错找不到目录
         run: cargo check --workspace --all-targets
