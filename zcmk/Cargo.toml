@@ -8,34 +8,34 @@ license.workspace = true
 repository.workspace = true
 homepage = "http://zcmk.com"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-004-ZCMK-BLOOD.md"
-keywords = ["hft", "micro-settlement", "rfc-004", "rtba", "picotoken"]
+keywords = ["hft", "micro-settlement", "rfc-004", "compute-market", "economic-homeostasis"]
 categories = ["financial-services", "algorithms", "distributed-computing"]
 rust-version = "1.75"
 
 [dependencies]
 # --- Core Organism Linking ---
-# ZCMK is the blood of the organism, circulating value through the neural pulse (RTTP)
+# ZCMK is the blood of the organism; it clears value atomically with RTTP pulses.
 rttp.workspace = true
 aicent.workspace = true
 
 # --- HFT-Grade Matching Engine ---
-# [PERF] High-concurrency lock-free queues for nanosecond-speed auctioning
+# [PERF] High-frequency lock-free data structures for nanosecond auctions.
 crossbeam-queue.workspace = true
-parking_lot.workspace = true   # [PERF] HFT-grade synchronization primitives
-num-traits = "0.2"             # [FINANCE] Precision math for picotoken (10^-12) arithmetic
-once_cell.workspace = true     # Safe static initialization of the market manifold
+parking_lot.workspace = true   # HFT-grade synchronization primitives
+num-traits = { version = "0.2", default-features = false } # High-precision arithmetic
 
 # --- Logic & Telemetry ---
 serde = { workspace = true, features = ["derive"] }
 anyhow.workspace = true
 tokio = { workspace = true, features = ["sync", "rt"] }
-rand.workspace = true          # Chaos-testing the market pressure
+rand.workspace = true          # Stochastic entropy for market pressure simulation
 tracing.workspace = true       # Financial telemetry for audit trails
+once_cell.workspace = true
 
 [features]
 default = ["std"]
-std = ["serde/std", "anyhow/std"]
-# [RFC-006] Enable Hive-level credit shunting across the global operational grid
+std = ["serde/std", "anyhow/std", "rttp/std"]
+# [RFC-006] Enable metabolic shunting across the global operational grid
 hive-metabolism = []
 
 [dev-dependencies]
