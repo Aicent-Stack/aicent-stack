@@ -66,8 +66,7 @@ serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 bytes = "1.6"                  # Zero-copy RTTP Pulse Frame buffers
 smallvec = { version = "1.13", features = ["serde"] } # Explicitly enable serde for smallvec
-# 🛡️Key fix: Unify feature declarations for num-traits
-num-traits = { version = "0.2", default-features = false, features = ["libm"] } 
+num-traits = { version = "0.2", default-features = false, features = ["libm"] } # Precision math for picotoken clearing
 zeroize = { version = "1.7", features = ["derive"] } # [SECURITY] Secure memory clearing for cryptographic seeds
 
 # --- Cryptography & Physical Guard (The Immune DNA) ---
@@ -83,6 +82,9 @@ anyhow = "1.0"
 thiserror = "1.0"
 tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
 rand = "0.8"                   # Simulated entropy for RPKI chaos testing
+
+# --- 🛡️ 关键修复：将 criterion 提升为 workspace 依赖 ---
+criterion = "0.5"
 
 # ====================================================================
 # [WORKSPACE LINTS] - Quality Gating (Carrier-Grade Rigor)
