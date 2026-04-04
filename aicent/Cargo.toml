@@ -1,0 +1,19 @@
+[package]
+name = "aicent"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[dependencies]
+rttp.workspace = true
+rpki.workspace = true
+zcmk.workspace = true
+gtiot.workspace = true
+serde.workspace = true
+anyhow.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+async-trait.workspace = true
+once_cell.workspace = true
