@@ -9,7 +9,7 @@
 # [RFC-005] GTIOT:  The Body     (Active / Standard)
 #
 # [COLLECTIVE INTELLIGENCE SPECIFICATIONS]
-# [RFC-006] AICENT-NET: The Hive (Active Evolution / Draft)
+# [RFC-006] AICENT-NET: The Hive (Draft / Active Evolution)
 # ====================================================================
 # Licensed under Apache-2.0 via Aicent.com Organization.
 
@@ -29,14 +29,14 @@ resolver = "2"
 
 [workspace.package]
 version = "1.0.0" # Official Sovereign Launch Version
-edition = "2024"  # Targeting the latest 2024 standard for high-end AI compute
+edition = "2024"  # Targeting the latest stable edition for future-proofing
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-rust-version = "1.85.0" # Mandating 1.85+ for native AtomicU128 support
+rust-version = "1.85.0" # Mandating 1.85+ for native AtomicU128 and edition 2024
 keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade"]
-categories = ["asynchronous", "embedded", "network-programming", "cryptography", "systems"]
+categories = ["asynchronous", "embedded", "network-programming", "cryptography", "distributed-computing"]
 
 # ====================================================================
 # [WORKSPACE DEPENDENCIES] - The Integrated Genetic Bank
@@ -56,11 +56,11 @@ aicent-net = { path = "aicent-net" }
 # Powering the sub-millisecond reflex arc and HFT-grade matching engines.
 tokio = { version = "1.37", features = ["full"] }
 rayon = "1.10"                 # Parallel SIMD scanning for RPKI verification
-crossbeam = "0.8"              # Lock-free data primitives for sub-ms reflex arcs
+crossbeam = "0.8"              # Lock-free data primitives for 128-bit manifolds
+crossbeam-queue = "0.3"        # Nanosecond task shunting for RTBA matching
 crossbeam-channel = "0.5"      # High-frequency inter-organ messaging
-crossbeam-queue = "0.3"        # Specialized queues for RTBA auctioning
-parking_lot = "0.12"           # Faster, hardware-aware mutexes for low-jitter loops
-once_cell = "1.19"             # Safe static initialization of neural manifolds
+parking_lot = "0.12"           # Hardware-optimized mutexes for low-jitter loops
+once_cell = "1.19"             # Safe thread-safe initialization of neural states
 async-trait = "0.1"            # Trait abstraction for sovereign cognitive orchestration
 futures = "0.3"                # High-throughput stream handling for Hive synchronization
 
@@ -69,13 +69,14 @@ futures = "0.3"                # High-throughput stream handling for Hive synchr
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 bytes = { version = "1.6", features = ["serde"] } 
-# 🛡️ FIX: smallvec only uses "serde". Do NOT include "std" feature here.
+# 🛡️ FIX: smallvec only uses "serde". Do NOT include "std" feature to avoid resolution errors.
 smallvec = { version = "1.13", features = ["serde"] } 
-# 🛡️ FIX: num-traits must use libm to prevent feature conflicts in workspace.
+# 🛡️ FIX: num-traits must use libm and disable default features to prevent workspace conflicts.
 num-traits = { version = "0.2", default-features = false, features = ["libm"] } 
-zeroize = { version = "1.7", features = ["derive"] } # Secure memory zeroing
+zeroize = { version = "1.7", features = ["derive"] } # [SECURITY] Secure memory zeroing
 
-# --- Cryptography & Integrity (The Immune DNA) ---
+# --- Cryptography & Physical Guard (The Immune DNA) ---
+# Hardware-accelerated primitives for trust and provenance.
 ring = "0.17"                  # Hardware-accelerated crypto for Tensor Watermarking
 sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain attestation
 
@@ -88,15 +89,16 @@ nalgebra = { version = "0.32", default-features = false, features = ["libm"] }
 # --- Telemetry & Diagnostics ---
 anyhow = "1.0"
 thiserror = "1.0"
-tracing = "0.1"                # Planetary-scale grid telemetry and pathogen auditing
-rand = "0.8"                   # Entropy for RPKI chaos testing and simulations
+tracing = "0.1"                # Planetary-scale grid telemetry and diagnostics
+rand = "0.8"                   # Simulated entropy for RPKI chaos testing
 
-# --- Performance Validation ---
+# --- Performance Validation & Benchmarking ---
+# Elevated to workspace level to ensure consistent audit reporting.
 criterion = { version = "0.5", features = ["async_tokio"] }
 
 # ====================================================================
-# [WORKSPACE LINTS] - Quality Enforcement (Carrier-Grade Rigor)
-# Establishing an unbreakable standard for industrial auditing.
+# [WORKSPACE LINTS] - Quality Gating (Carrier-Grade Rigor)
+# Enforcing strict engineering standards for industrial auditing.
 # ====================================================================
 
 [workspace.lints.rust]
@@ -104,6 +106,7 @@ unsafe_op_in_unsafe_fn = "warn"
 missing_docs = "warn"
 
 [workspace.lints.clippy]
+# Enforcing absolute security and performance optimization patterns
 undocumented_unsafe_blocks = "warn"
 manual_memcpy = "warn"
 perf = "warn"
@@ -115,7 +118,7 @@ pedantic = "warn"
 # ====================================================================
 
 [profile.release]
-opt-level = 3                 # Maximum optimization for production homeostasis
+opt-level = 3                 # Maximum optimization for production reflexes
 lto = "fat"                   # Full Link-Time Optimization for cross-crate speed
 codegen-units = 1             # Better binary density and cache locality
 panic = "abort"               # Ensures absolute determinism; avoids stack unwinding tax
