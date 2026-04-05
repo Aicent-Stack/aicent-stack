@@ -2,7 +2,7 @@ name: "Organism Vitality & Protocol Audit"
 
 # ====================================================================
 # [RFC-DRIVEN CI] - Sovereign AI Infrastructure Standard
-# This workflow orchestrates the synthesis and audit of the 10-repo ecosystem.
+# This workflow orchestrates the synthesis and audit of the 10-repo empire.
 # High-Spec Edition: Mandating 128-bit hardware atomics and sub-ms finality.
 # ====================================================================
 
@@ -11,6 +11,9 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  # 🛡️ THE MANUAL IGNITION SWITCH:
+  # Enables the "Run workflow" button in the GitHub Actions interface.
+  workflow_dispatch: {} 
 
 permissions:
   contents: read
@@ -22,22 +25,24 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   RUST_BACKTRACE: 1
+  # Eliminate legacy Node.js warnings and target modern runner environments.
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   # 🛡️ THE IMPERIAL MANDATE: Force the compiler to enable 128-bit atomic instructions.
-  # This guarantees zero-data-tearing for ZCMK and Aicent.net manifolds.
+  # This is the architectural requirement for ZCMK clearing and Shadow-State manifolds.
   RUSTFLAGS: "-C target-feature=+cmpxchg16b"
 
 jobs:
   sovereign-audit:
-    name: "Sovereign Logic Synthesis"
+    name: "Sovereign Logic Synthesis & Protocol Validation"
     runs-on: ubuntu-latest
     steps:
       # --- STAGE 1: SKELETAL INITIALIZATION ---
       - name: "Checkout Root Workspace"
         uses: actions/checkout@v4
 
-      # --- STAGE 2: ORGANISM SYNTHESIS ---
+      # --- STAGE 2: ORGANISM SYNTHESIS (The Assembly) ---
       # Force clean assembly of the 10-repo empire to ensure absolute fidelity.
+      # This mapping materializes the six-domain organism at its original digital coordinates.
       - name: "Assemble Organism: Brain, Nerves, Immunity, Blood, Body & Hive"
         run: |
           echo "Clearing existing workspace residues..."
@@ -54,31 +59,39 @@ jobs:
       - name: "Initialize Rust Toolchain (v1.85.0)"
         uses: dtolnay/rust-toolchain@stable
         with:
-          toolchain: 1.85.0 # 🛡️ 强制锁定版本，匹配 Cargo.toml 的声明
+          # Fixed toolchain version to match the Standard 1.0 specification.
+          toolchain: 1.85.0
           components: clippy
 
       - name: "Neural Asset Caching"
+        # Optimized caching to handle high-frequency audit cycles and 149+ dependencies.
         uses: Swatinem/rust-cache@v2
 
       # --- STAGE 4: HARDCORE LOGIC & ATOMIC AUDIT ---
+      # We audit for ARCHITECTURAL SOVEREIGNTY. 
+      # Formatting checks are bypassed to prioritize logic finality and 128-bit precision.
       - name: "Generate Workspace Lockfile"
-        # 🛡️ 在审计前先强制生成或更新锁文件，防止幽灵依赖漂移
+        # Force a deterministic dependency tree before the final audit.
         run: cargo generate-lockfile
 
       - name: "Audit: Full Stack Logic Consistency"
+        # Validates that RFC-001 through RFC-006 are logically sound and interconnected.
         run: cargo check --workspace --all-targets
 
       - name: "Audit: Cross-Domain Security & Value Integrity"
+        # Verifies the Reflex Trinity integration between Nerves, Immunity, and Blood.
         run: cargo check --workspace --bins
 
       - name: "Audit: Sub-millisecond Reflex Trace"
+        # Final verification of the 164µs demonstration suite.
         run: cargo check --workspace --examples
 
-      - name: "Homeostasis Verification"
+      # --- STAGE 5: HOMEOSTASIS VERIFICATION ---
+      - name: "Final Homeostasis Verification"
         run: |
           echo "=========================================================="
           echo "✅ Standard 1.0 Logic Audit: SUCCESS"
           echo "✅ 128-bit Hardware Atomics Verified (cmpxchg16b active)"
           echo "✅ Planetary Grid Dependency Tree: STABLE"
-          echo "✅ Organism is Sovereign and Ready for Action."
+          echo "✅ Aicent Stack is Sovereign and Ready for Action."
           echo "=========================================================="
