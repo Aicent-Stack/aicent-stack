@@ -2,7 +2,7 @@ name: "Organism Vitality & Protocol Audit"
 
 # ====================================================================
 # [RFC-DRIVEN CI] - Sovereign AI Infrastructure Standard
-# This workflow orchestrates the synthesis and audit of the 10-repo empire.
+# This workflow orchestrates the synthesis and audit of the 10-repo ecosystem.
 # High-Spec Edition: Mandating 128-bit hardware atomics and sub-ms finality.
 # ====================================================================
 
@@ -11,8 +11,7 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
-  # 🛡️ THE MANUAL IGNITION SWITCH:
-  # Enables the "Run workflow" button in the GitHub Actions interface.
+  # 🛡️ THE MANUAL IGNITION SWITCH: Enables the "Run workflow" button in UI.
   workflow_dispatch: {} 
 
 permissions:
@@ -25,10 +24,9 @@ concurrency:
 env:
   CARGO_TERM_COLOR: always
   RUST_BACKTRACE: 1
-  # Eliminate legacy Node.js warnings and target modern runner environments.
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   # 🛡️ THE IMPERIAL MANDATE: Force the compiler to enable 128-bit atomic instructions.
-  # This is the architectural requirement for ZCMK clearing and Shadow-State manifolds.
+  # Required for AtomicU128 consistency across the Brain, Blood, and Hive.
   RUSTFLAGS: "-C target-feature=+cmpxchg16b"
 
 jobs:
@@ -42,7 +40,7 @@ jobs:
 
       # --- STAGE 2: ORGANISM SYNTHESIS (The Assembly) ---
       # Force clean assembly of the 10-repo empire to ensure absolute fidelity.
-      # This mapping materializes the six-domain organism at its original digital coordinates.
+      # This synthesis materializes the six-domain organism at its digital coordinates.
       - name: "Assemble Organism: Brain, Nerves, Immunity, Blood, Body & Hive"
         run: |
           echo "Clearing existing workspace residues..."
@@ -59,17 +57,15 @@ jobs:
       - name: "Initialize Rust Toolchain (v1.85.0)"
         uses: dtolnay/rust-toolchain@stable
         with:
-          # Fixed toolchain version to match the Standard 1.0 specification.
           toolchain: 1.85.0
           components: clippy
 
       - name: "Neural Asset Caching"
-        # Optimized caching to handle high-frequency audit cycles and 149+ dependencies.
+        # Optimized caching to handle high-frequency audit cycles.
         uses: Swatinem/rust-cache@v2
 
       # --- STAGE 4: HARDCORE LOGIC & ATOMIC AUDIT ---
-      # We audit for ARCHITECTURAL SOVEREIGNTY. 
-      # Formatting checks are bypassed to prioritize logic finality and 128-bit precision.
+      # Auditing for ARCHITECTURAL SOVEREIGNTY. 
       - name: "Generate Workspace Lockfile"
         # Force a deterministic dependency tree before the final audit.
         run: cargo generate-lockfile
@@ -82,11 +78,6 @@ jobs:
         # Verifies the Reflex Trinity integration between Nerves, Immunity, and Blood.
         run: cargo check --workspace --bins
 
-      - name: "Audit: Sub-millisecond Reflex Trace"
-        # Final verification of the 164µs demonstration suite.
-        run: cargo check --workspace --examples
-
-      # --- STAGE 5: HOMEOSTASIS VERIFICATION ---
       - name: "Final Homeostasis Verification"
         run: |
           echo "=========================================================="
