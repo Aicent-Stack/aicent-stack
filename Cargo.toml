@@ -14,6 +14,7 @@
 # Licensed under Apache-2.0 via Aicent.com Organization.
 
 [workspace]
+# Orchestrating the physical boundaries of the Aicent Stack organism.
 members = [
     "aicent",
     "rttp",
@@ -23,17 +24,18 @@ members = [
     "aicent-net",
     "aicent-demo",
 ]
-resolver = "2" # Enable modern feature resolution for complex dependency manifolds
+# Resolver v2 ensures conflict-free feature resolution for 128-bit manifolds.
+resolver = "2"
 
 [workspace.package]
 version = "1.0.0" # Official Sovereign Launch Version
-edition = "2024"  # Explicitly targeting the latest 2024 standard for future-proofing
+edition = "2024"  # Targeting the latest 2024 standard for high-end AI compute
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-rust-version = "1.85.0" # Mandating the latest stable toolchain for AtomicU128 support
-keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade", "hive-mind"]
+rust-version = "1.85.0" # Mandating 1.85+ for native AtomicU128 support
+keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade"]
 categories = ["asynchronous", "embedded", "network-programming", "cryptography", "systems"]
 
 # ====================================================================
@@ -42,7 +44,7 @@ categories = ["asynchronous", "embedded", "network-programming", "cryptography",
 # ====================================================================
 
 [workspace.dependencies]
-# --- Core Organism Internal Linking ---
+# --- Internal Domain Linking (Unidirectional Authority) ---
 aicent     = { path = "aicent" }
 rttp       = { path = "rttp" }
 rpki       = { path = "rpki" }
@@ -54,7 +56,7 @@ aicent-net = { path = "aicent-net" }
 # Powering the sub-millisecond reflex arc and HFT-grade matching engines.
 tokio = { version = "1.37", features = ["full"] }
 rayon = "1.10"                 # Parallel SIMD scanning for RPKI verification
-crossbeam = "0.8"              # Lock-free data primitives for nanosecond shunting
+crossbeam = "0.8"              # Lock-free data primitives for sub-ms reflex arcs
 crossbeam-channel = "0.5"      # High-frequency inter-organ messaging
 crossbeam-queue = "0.3"        # Specialized queues for RTBA auctioning
 parking_lot = "0.12"           # Faster, hardware-aware mutexes for low-jitter loops
@@ -66,21 +68,22 @@ futures = "0.3"                # High-throughput stream handling for Hive synchr
 # Ensuring zero-data-tearing and precision at the 10^-12 scale.
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-bytes = { version = "1.6", features = ["serde"] } # Zero-copy buffer management
-smallvec = { version = "1.13", features = ["serde"] } # Stack-allocation for motor primitives
-num-traits = { version = "0.2", default-features = false, features = ["libm"] } # Precision picotoken clearing
-zeroize = { version = "1.7", features = ["derive"] } # Secure memory zeroing for RPKI credentials
+bytes = { version = "1.6", features = ["serde"] } 
+# 🛡️ FIX: smallvec only uses "serde". Do NOT include "std" feature here.
+smallvec = { version = "1.13", features = ["serde"] } 
+# 🛡️ FIX: num-traits must use libm to prevent feature conflicts in workspace.
+num-traits = { version = "0.2", default-features = false, features = ["libm"] } 
+zeroize = { version = "1.7", features = ["derive"] } # Secure memory zeroing
 
 # --- Cryptography & Integrity (The Immune DNA) ---
-# Hardware-accelerated primitives for trust and provenance.
-ring = "0.17"                  # Core crypto for In-band Tensor Watermarking
+ring = "0.17"                  # Hardware-accelerated crypto for Tensor Watermarking
 sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain attestation
 
 # --- Hardware-Native Adaptation (Embodied Intelligence) ---
 # Hard real-time primitives for 1.2 kHz robotic reflexes.
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
 embassy-time = { version = "0.3", features = ["std"] } 
-nalgebra = { version = "0.32", default-features = false, features = ["libm"] } # 12-DOF kinematics
+nalgebra = { version = "0.32", default-features = false, features = ["libm"] } 
 
 # --- Telemetry & Diagnostics ---
 anyhow = "1.0"
@@ -101,20 +104,19 @@ unsafe_op_in_unsafe_fn = "warn"
 missing_docs = "warn"
 
 [workspace.lints.clippy]
-# Enforcing absolute security and performance optimization patterns
 undocumented_unsafe_blocks = "warn"
 manual_memcpy = "warn"
 perf = "warn"
 pedantic = "warn"
 
 # ====================================================================
-# [PROFILES] - Engineered for Sub-Millisecond Finality
+# [RELEASE PROFILES] - Engineered for Sub-Millisecond Finality
 # Maximizing binary density and hardware instruction pipeline efficiency.
 # ====================================================================
 
 [profile.release]
-opt-level = 3                 # Maximum optimization for production reflexes
+opt-level = 3                 # Maximum optimization for production homeostasis
 lto = "fat"                   # Full Link-Time Optimization for cross-crate speed
 codegen-units = 1             # Better binary density and cache locality
 panic = "abort"               # Ensures absolute determinism; avoids stack unwinding tax
-strip = true                  # Remove symbols to minimize binary footprint for L1 cache
+strip = true                  # Remove symbols to minimize binary footprint
