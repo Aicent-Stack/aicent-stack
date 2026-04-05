@@ -2,18 +2,19 @@
 # Domain: http://aicent.com & http://aicent.net
 # ====================================================================
 # [CORE ORGANISM SPECIFICATIONS]
-# [RFC-001] AICENT: The Brain    (Active / Standard) - Cognitive Orchestration
-# [RFC-002] RTTP:   The Nerves   (Active / Standard) - Neural Transport Protocol
-# [RFC-003] RPKI:   The Immunity (Active / Standard) - Parallel Tensor Watermarking
-# [RFC-004] ZCMK:   The Blood    (Active / Standard) - Zero-Commission Settlement
-# [RFC-005] GTIOT:  The Body     (Active / Standard) - Physical Reflex & Actuation
+# [RFC-001] AICENT: The Brain    (Active / Standard)
+# [RFC-002] RTTP:   The Nerves   (Active / Standard)
+# [RFC-003] RPKI:   The Immunity (Active / Standard)
+# [RFC-004] ZCMK:   The Blood    (Active / Standard)
+# [RFC-005] GTIOT:  The Body     (Active / Standard)
 #
 # [COLLECTIVE INTELLIGENCE SPECIFICATIONS]
-# [RFC-006] AICENT-NET: The Hive (Draft / Active Evolution) - Planetary Grid Coordination
+# [RFC-006] AICENT-NET: The Hive (Draft / Active Evolution)
 # ====================================================================
 # Licensed under Apache-2.0 via Aicent.com Organization.
 
 [workspace]
+# Defines the physical boundaries of the Aicent Stack organism.
 members = [
     "aicent",
     "rttp",
@@ -23,78 +24,76 @@ members = [
     "aicent-net",
     "aicent-demo",
 ]
-resolver = "2" # Use the latest resolver for optimal dependency management.
+# Use the v2 resolver for modern, conflict-free feature resolution across the workspace.
+resolver = "2"
 
 [workspace.package]
-version = "1.0.0" # Official Standard 1.0 release across all modules.
-edition = "2024"  # Targeting the latest stable Rust edition for maximum future compatibility.
+version = "1.0.0" # Official Standard 1.0 release
+edition = "2021"  # Stable Rust edition for high-performance systems
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-# Keywords and categories for high discoverability in Rust ecosystem.
-keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade", "hive-mind", "cybernetics"]
-categories = ["asynchronous", "embedded", "network-programming", "cryptography", "distributed-computing", "systems"]
-rust-version = "1.85" # Explicitly stating target Rust version for compiler safety.
+rust-version = "1.75" # Minimum supported Rust version for the stack
+keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade"]
+categories = ["asynchronous", "embedded", "network-programming", "cryptography", "distributed-computing"]
 
 # ====================================================================
 # [WORKSPACE DEPENDENCIES] - The Organism's Integrated DNA
-# Centralized versioning for all sub-crates ensures maximum stability and performance.
+# Centralized versioning for the entire six-domain stack.
+# All sub-crates MUST inherit these versions to maintain metabolic consistency.
 # ====================================================================
 
 [workspace.dependencies]
-# --- Core Domain Linking ---
-# Explicitly define paths and features for cross-domain interaction.
-aicent = { path = "aicent" }
-rttp = { path = "rttp" }
-rpki = { path = "rpki" }
-zcmk = { path = "zcmk" }
-gtiot = { path = "gtiot" }
+# --- Internal Domain Linking (Strict Unidirectional Flow) ---
+# Sub-crates link to each other using these path definitions to prevent cyclic redundancy.
+aicent     = { path = "aicent" }
+rttp       = { path = "rttp" }
+rpki       = { path = "rpki" }
+zcmk       = { path = "zcmk" }
+gtiot      = { path = "gtiot" }
 aicent-net = { path = "aicent-net" }
 
-# --- High-Performance Async & Concurrency ---
-# Tokio 1.37+ for mission-critical, high-throughput task orchestration.
+# --- High-Performance Asynchronous Backbone ---
+# Mission-critical task orchestration and parallel execution.
 tokio = { version = "1.37", features = ["full"] }
-# Rayon for parallel processing in RPKI verification (SIMD lanes).
-rayon = "1.10"
-# Crossbeam primitives for lock-free data structures and high-frequency messaging.
-crossbeam = "0.8"
-crossbeam-channel = "0.5"
-crossbeam-queue = "0.3"
-# Optimized synchronization primitives for sub-millisecond reflexes.
-parking_lot = "0.12"
-# Safe static initialization for global neural states.
-once_cell = "1.19"
-# Trait abstraction for defining autonomic behaviors.
-async-trait = "0.1"
-# High-throughput stream handling for global grid synchronization.
-futures = "0.3"
+rayon = "1.10"                 # Parallel SIMD scanning for RPKI (RFC-003)
+crossbeam = "0.8"              # Lock-free data primitives for sub-ms reflex arcs
+crossbeam-queue = "0.3"        # Nanosecond task shunting for RTBA matching (RFC-004)
+crossbeam-channel = "0.5"      # High-frequency inter-organ messaging
+parking_lot = "0.12"           # Hardware-optimized mutexes for HFT-grade logic
+once_cell = "1.19"             # Safe thread-safe initialization of global manifolds
+async-trait = "0.1"            # Trait abstraction for Sovereign AID orchestration
+futures = "0.3"                # High-throughput stream handling for Hive-sync (RFC-006)
 
 # --- Data Sovereignty & Memory Safety ---
-# Zero-copy buffer management and 128-bit atomic operations for financial precision.
+# Strict zero-copy buffer management and precision arithmetic.
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
-bytes = "1.6"
-smallvec = { version = "1.13", features = ["serde"] }
-num-traits = { version = "0.2", default-features = false, features = ["libm"] }
-zeroize = { version = "1.7", features = ["derive"] } # [SECURITY] Secure memory clearing.
+bytes = "1.6"                  # Zero-copy RTTP Pulse Frame buffers (RFC-002)
+smallvec = { version = "1.13", features = ["serde"] } # Stack-allocation optimization for motor primitives
+num-traits = { version = "0.2", default-features = false, features = ["libm"] } # Precision math for picotoken clearing
+zeroize = { version = "1.7", features = ["derive"] } # [SECURITY] Secure memory clearing for cryptographic seeds
 
-# --- Cryptography & Integrity ---
-ring = "0.17"                  # Hardware-accelerated crypto for RPKI & AID signatures.
-sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain integrity.
+# --- Cryptography & Physical Guard (The Immune DNA) ---
+# Core steganography and hashing for identity chains.
+ring = "0.17"                  # Hardware-accelerated crypto for tensor watermarking
+sha2 = "0.10"                  # Merkle-DAG hashing for ROA-Chain provenance
 
-# --- Hardware-Native Adaptation ---
-# Embassy for real-time OS simulation and bare-metal compatibility.
+# --- Hardware-Native Adaptation (Embodied Intelligence) ---
+# Hard real-time primitives for 1.2 kHz robotics loops (RFC-005).
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
-embassy-time = { workspace = true, features = ["std"] } # std for simulation compatibility
+embassy-time = { version = "0.3", features = ["std"] } # std feature required for simulation environments
+nalgebra = { version = "0.32", default-features = false, features = ["libm"] } # 12-DOF kinematics
 
 # --- Telemetry & Diagnostics ---
 anyhow = "1.0"
 thiserror = "1.0"
-tracing = "0.1"                # Planetary-scale grid telemetry.
-rand = "0.8"                   # Simulated entropy for RPKI stress-testing.
+tracing = "0.1"                # Planetary-scale grid telemetry
+rand = "0.8"                   # Simulated entropy for chaos testing
 
-# --- Development & Benchmarking ---
+# --- Benchmarking & Audit Tools ---
+# Elevated to workspace level to prevent sub-crate resolution conflicts.
 criterion = "0.5"
 
 # ====================================================================
@@ -107,7 +106,7 @@ unsafe_op_in_unsafe_fn = "warn"
 missing_docs = "warn"
 
 [workspace.lints.clippy]
-# Strict checks for performance optimization and security practices.
+# Disallow unoptimized or insecure code patterns
 undocumented_unsafe_blocks = "warn"
 manual_memcpy = "warn"
 perf = "warn"
@@ -115,12 +114,11 @@ pedantic = "warn"
 
 # ====================================================================
 # [RELEASE PROFILES] - Engineered for Sub-Millisecond Finality
-# These profiles generate the fastest possible machine code for production.
+# This configuration generates the fastest possible machine code.
 # ====================================================================
 
 [profile.release]
-opt-level = 3                 # Maximum optimization for production reflexes.
-lto = "fat"                   # Full Link-Time Optimization for cross-crate performance.
-codegen-units = 1             # Encourages deeper optimization at the cost of compile time.
-panic = "abort"               # Ensures absolute determinism; avoids runtime overhead.
-strip = true                  # Strip symbols for smaller binary size.
+opt-level = 3                 # Maximum optimization for production homeostasis
+lto = "fat"                   # Full Link-Time Optimization for cross-crate execution speed
+codegen-units = 1             # Better binary density and L1 cache locality
+panic = "abort"               # Ensures absolute determinism; avoids stack unwinding tax
