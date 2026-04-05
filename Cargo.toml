@@ -29,12 +29,12 @@ resolver = "2"
 
 [workspace.package]
 version = "1.0.0" # Official Standard 1.0 release
-edition = "2021"  # Stable Rust edition for high-performance systems
+edition = "2024"  # Stable Rust edition for high-performance systems
 authors = ["Aicent Stack Team <lee@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-rust-version = "1.75" # Minimum supported Rust version for the stack
+rust-version = "1.85" # Minimum supported Rust version for the stack
 keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "carrier-grade"]
 categories = ["asynchronous", "embedded", "network-programming", "cryptography", "distributed-computing"]
 
