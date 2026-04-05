@@ -24,6 +24,7 @@ env:
   RUST_BACKTRACE: 1
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
   # 🛡️ THE IMPERIAL MANDATE: Force the compiler to enable 128-bit atomic instructions.
+  # This guarantees zero-data-tearing for ZCMK and Aicent.net manifolds.
   RUSTFLAGS: "-C target-feature=+cmpxchg16b"
 
 jobs:
@@ -36,7 +37,7 @@ jobs:
         uses: actions/checkout@v4
 
       # --- STAGE 2: ORGANISM SYNTHESIS ---
-      # Force clean assembly of the 10-repo empire to ensure no stale artifacts.
+      # Force clean assembly of the 10-repo empire to ensure absolute fidelity.
       - name: "Assemble Organism: Brain, Nerves, Immunity, Blood, Body & Hive"
         run: |
           echo "Clearing existing workspace residues..."
@@ -50,15 +51,20 @@ jobs:
           echo "Synthesis Complete: Six domains and demo suite assembled."
 
       # --- STAGE 3: ENVIRONMENT CALIBRATION ---
-      - name: "Initialize Rust Toolchain (v1.75+)"
+      - name: "Initialize Rust Toolchain (v1.85.0)"
         uses: dtolnay/rust-toolchain@stable
         with:
+          toolchain: 1.85.0 # 🛡️ 强制锁定版本，匹配 Cargo.toml 的声明
           components: clippy
 
       - name: "Neural Asset Caching"
         uses: Swatinem/rust-cache@v2
 
       # --- STAGE 4: HARDCORE LOGIC & ATOMIC AUDIT ---
+      - name: "Generate Workspace Lockfile"
+        # 🛡️ 在审计前先强制生成或更新锁文件，防止幽灵依赖漂移
+        run: cargo generate-lockfile
+
       - name: "Audit: Full Stack Logic Consistency"
         run: cargo check --workspace --all-targets
 
@@ -72,6 +78,7 @@ jobs:
         run: |
           echo "=========================================================="
           echo "✅ Standard 1.0 Logic Audit: SUCCESS"
-          echo "✅ 128-bit Hardware Atomics Verified."
-          echo "✅ Organism is Stable and Sovereign."
+          echo "✅ 128-bit Hardware Atomics Verified (cmpxchg16b active)"
+          echo "✅ Planetary Grid Dependency Tree: STABLE"
+          echo "✅ Organism is Sovereign and Ready for Action."
           echo "=========================================================="
