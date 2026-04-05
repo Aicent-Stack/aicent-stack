@@ -2,60 +2,54 @@
 name = "gtiot"
 description = "GTIOT: High-Fidelity Edge Fusion and Action-Collapse Framework [RFC-005]"
 version.workspace = true
-edition = "2024" # Explicitly set edition to 2024 for consistency
-authors = ["Aicent Stack Team <lee@aicent.com>"]
-license = "Apache-2.0"
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
 repository = "https://github.com/Aicent-Stack/gtiot" # Points to its own independent repository
 homepage = "http://gtiot.com"
 documentation = "https://github.com/Aicent-Stack/manifesto/blob/main/rfcs/RFC-005-GTIOT-BODY.md"
-keywords = ["robotics", "edge-computing", "rfc-005", "action-collapse", "proprioception", "128-bit-atomic"]
+keywords = ["robotics", "embodied-ai", "rfc-005", "action-collapse", "proprioception", "128-bit-atomic"]
 categories = ["embedded", "hardware-support", "no-std", "science"]
-rust-version = "1.85" # Explicitly set rust-version to 1.85 for consistency
+rust-version.workspace = true # Explicitly inherit rust-version for consistency
 
 [dependencies]
-# --- Core Organism Linking ---
-# GTIOT operates as the physical manifestation, requiring real-time pulses from Nerves (RTTP)
-# and ensuring security via Immunity (RPKI) and value transfer via Blood (ZCMK).
-rttp = { workspace = true, features = ["std"] } # Nerves provide standard std transport
-rpki = { workspace = true, features = ["std"] } # Immunity for hardware-level verification
-zcmk = { workspace = true, features = ["std"] } # Blood for ZCMK clearing
+# --- Core Organism Linking (Unidirectional Dependency Flow) ---
+# The Body reacts to Nerves (RTTP) and requires Immunity (RPKI) and Blood (ZCMK)
+rttp = { workspace = true }
+rpki = { workspace = true }
+zcmk = { workspace = true }
 
 # --- Hard Real-Time & Embedded Execution ---
-# [RFC-005] Embassy ecosystem for sub-millisecond control loops (1.2 kHz).
-# These are critical for deterministic actuation.
+# [RFC-005] Embassy executor for sub-millisecond control loops (1200 Hz)
 embassy-executor = { workspace = true }
 embassy-time     = { workspace = true }
 
 # --- Kinetic Primitives & Mathematics ---
-# [PHYSICS] Utilizes Nalgebra for 12-DOF robotics and complex control algorithms.
-nalgebra = { version = "0.32", default-features = false, features = ["libm"] } 
-# [PERF] Zero-allocation storage for high-frequency motor trajectories and sensor data.
-smallvec = { workspace = true, features = ["serde"] }
+# [PHYSICS] Linear algebra for 12-DOF kinematics and motor torque vectors
+nalgebra = { workspace = true }
+# [PERF] Zero-allocation storage for high-frequency motor trajectories
+smallvec = { workspace = true }
 
 # --- Logic, State & Telemetry ---
-serde = { workspace = true, features = ["derive"] }
-anyhow = { workspace = true }
-tracing = { workspace = true } # High-fidelity telemetry for physical state monitoring
-once_cell = { workspace = true } # Safe static initialization of hardware interfaces
-tokio = { workspace = true, features = ["sync", "rt"] } # For simulation environments
+serde     = { workspace = true, features = ["derive"] }
+anyhow    = { workspace = true }
+tracing   = { workspace = true } # High-fidelity proprioceptive telemetry
+once_cell = { workspace = true } # Global state manifold initialization
+tokio     = { workspace = true } # Simulation bridge
 
 [features]
 default = ["std"]
 # [Standard v1.0] Standard library support for high-end edge compute nodes.
-# This enables all core functionalities on platforms with a std environment.
+# Explicitly re-exporting 'std' for internal Aicent Stack dependencies to avoid cyclic feature conflicts.
 std = [
-    "serde/std", 
-    "anyhow/std", 
     "rttp/std", 
     "rpki/std", 
-    "zcmk/std", 
-    "tokio/rt", 
-    "tokio/sync"
+    "zcmk/std"
 ]
-# [RFC-005] Bare-metal support for robotics MCUs/NPUs.
-# Disables std features, relying on core primitives.
+
+# [RFC-005] Bare-metal support for industrial robotics (MCUs/NPUs)
 no_std = ["nalgebra/libm"]
 
 [dev-dependencies]
-# Performance benchmarking for 1.2 kHz reflex loop determinism.
+# Benchmarking for the 200µs Action-Collapse performance target
 criterion = { workspace = true }
