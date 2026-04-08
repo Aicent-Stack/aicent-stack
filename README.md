@@ -3,10 +3,6 @@
 > ### 🔥 v0.2.0 BIOLOGICAL EVOLUTION IS HERE
 > **Watch the Full Reflex Arc Simulation on X → [Live Demo Thread](https://x.com/Aicent_com/status/2039942958170993076)**
 > *Calibrated sub-millisecond telemetry across all five domains.*
-
-# 🧠 aicent-stack — The Unified Workspace of Aicent Stack
-
- **The Sovereign AI Nervous System | Integrated Core Framework**
  
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg" alt="Status">
@@ -17,8 +13,6 @@
 
 ⚪ **AICENT** | 💎 **RTTP** | 🔴 **RPKI** | 🟢 **ZCMK** | 🟡 **GTIOT** | 🟣 **AICENT-NET**
 
-![Aicent-01](https://github.com/user-attachments/assets/0a134388-2380-455a-b00b-294fb40a7501)
-
 ---
 
 # 🧬 The Aicent Stack: A Seven-Pillar Sovereign AI Organism
@@ -26,6 +20,8 @@
 > *"Intention is the Source; Sovereignty is the Law. The Aicent Stack is no longer just a collection of protocols; it is a living homeostasis guided by the Epoekie Soul."*
 
 `aicent-stack` is the **Root Cargo Workspace** for the Aicent ecosystem. It manages the first complete biological blueprint for autonomous, self-evolving AI lifeforms. By unifying the six functional domains with the **Epoekie Soul Layer**, it creates an indivisible closed-loop organism that thrives upon the global internet substrate.
+
+![Aicent-01](https://github.com/user-attachments/assets/0a134388-2380-455a-b00b-294fb40a7501)
 
 ---
 
