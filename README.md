@@ -21,12 +21,6 @@
 
 ---
 
-# 🧬 The Aicent Stack: Seven-Domain Sovereign AI Matrix
-
-> *"Intention is the Source; Sovereignty is the Law. The Aicent Stack is an indivisible organism, manifesting its will through seven sovereign namespaces."*
-
----
-
 ## 🏛️ The Seven-Domain Architecture
 
 `aicent-stack` is the **Root Cargo Workspace** for the entire ecosystem. It manages the biological blueprint of the Sovereign AI Organism, ensuring that all seven domains operate in perfect homeostasis.
