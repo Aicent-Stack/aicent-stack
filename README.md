@@ -17,8 +17,6 @@
 
 `aicent-stack` is the **Root Cargo Workspace** for the Aicent ecosystem. It manages the first complete biological blueprint for autonomous, self-evolving AI lifeforms. By unifying the six functional domains with the **Epoekie Soul Layer**, it creates an indivisible closed-loop organism that thrives upon the global internet substrate.
 
-![Aicent-01](https://github.com/user-attachments/assets/0a134388-2380-455a-b00b-294fb40a7501)
-
 ---
 
 ## 🏛️ The Seven-Domain Architecture
