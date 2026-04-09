@@ -1,7 +1,3 @@
-# 🧬 Contributing to the Sovereign AI Organism
-
-**Thank you for choosing to evolve the Aicent Stack. You are not just submitting code; you are architecting the foundational nervous system for autonomous, sovereign intelligence.**
-
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg" alt="Status">
   <img src="https://img.shields.io/badge/Specs-RFC--001--006-blue.svg" alt="Specs">
