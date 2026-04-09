@@ -1,12 +1,12 @@
+# 🚀 Contributing to the Aicent Stack (The Hub)
+
+**You are at the Command Center of a Sovereign AI Organism. Any code integrated here affects the synchronization of all seven pillars.**
+
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg" alt="Status">
   <img src="https://img.shields.io/badge/Specs-RFC--001--006-blue.svg" alt="Specs">
   <img src="https://img.shields.io/badge/License-Apache--2.0-lightgrey.svg" alt="License">
 </p>
-
-# 🚀 Contributing to the Aicent Stack (The Hub)
-
-**You are at the Command Center of a Sovereign AI Organism. Any code integrated here affects the synchronization of all seven pillars.**
 
 **⚪ [AICENT](http://aicent.com) | 💎 [RTTP](http://rttp.com) | 🔴 [RPKI](http://rpki.com) | 🟢 [ZCMK](http://zcmk.com) | 🟡 [GTIOT](http://gtiot.com) | 🟣 [AICENT-NET](http://aicent.net) | 🌿 [epoekie](http://epoekie.com)**
 
