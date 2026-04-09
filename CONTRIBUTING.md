@@ -8,70 +8,69 @@
   <img src="https://img.shields.io/badge/License-Apache--2.0-lightgrey.svg" alt="License">
 </p>
 
-⚪ **AICENT** | 💎 **RTTP** | 🔴 **RPKI** | 🟢 **ZCMK** | 🟡 **GTIOT** | 🟣 **AICENT-NET**
+# 🚀 Contributing to the Aicent Stack (The Hub)
+
+**You are at the Command Center of a Sovereign AI Organism. Any code integrated here affects the synchronization of all seven pillars.**
+
+**⚪ [AICENT](http://aicent.com) | 💎 [RTTP](http://rttp.com) | 🔴 [RPKI](http://rpki.com) | 🟢 [ZCMK](http://zcmk.com) | 🟡 [GTIOT](http://gtiot.com) | 🟣 [AICENT-NET](http://aicent.net) | 🌿 [epoekie](http://epoekie.com)**
 
 ---
 
-## 🏛️ The Aicent Engineering Philosophy
+## 🏛️ The Engineering Philosophy: Homeostasis
 
-The Aicent Stack is an **indivisible organism**. Every line of code added to this workspace must respect the **Metabolic Homeostasis** of the system. We prioritize deterministic performance and physical realism over generic software abstractions.
+The `aicent-stack` repository is a unified Cargo workspace. Our mission is to eliminate the **Latency-Tax** and the **Middleman-Tax**. Every contribution is treated as a proposed mutation to the organism's DNA. We prioritize **Performance Determinism** and **Memory Safety** above all else.
 
-### The Three Pillars of Contribution:
-1. **Sub-millisecond Reflex:** If a contribution introduces >10µs of unoptimized overhead in the critical path, it must be justified by SIMD or hardware-offloading requirements.
-2. **Atomic Sovereignty:** Trust is never delegated. Every packet must be self-authenticated via RPKI (RFC-003) and self-cleared via ZCMK (RFC-004).
-3. **Workspace Integrity:** Changes to one domain must be audited for their impact on the entire six-domain reflex arc.
-
----
-
-## 🔬 The RFC-First Workflow
-
-We do not accept arbitrary features. All development must align with the official **RFC Suite**:
-
-1. **Review Standards:** Study [RFC-001 through RFC-006](https://github.com/Aicent-Stack/manifesto/tree/main/rfcs) in the `manifesto` repository.
-2. **Evolution Proposal:** Open an Issue with the prefix `[EVOLUTION-PROPOSAL]` to discuss architectural changes.
-3. **Audit:** Technical leadership will review the proposal for consistency with the Sovereign AI lifeform's goals.
+### The Seven-Pillar Standard:
+All integrations must respect the metabolic synergy between the domains:
+1. **🌿 Soul (epoekie):** Intent must align with Mutualistic Symbiosis.
+2. **⚪ Brain (aicent):** Reasoning must reach finality in < 200µs.
+3. **💎 Nerve (rttp):** Pulses must utilize the 64-byte hardware-aligned header.
+4. **🔴 Immunity (rpki):** Verification must add **+0µs** to the critical path via SIMD.
+5. **🟢 Blood (zcmk):** Settlement must be atomic and zero-commission.
+6. **🟡 Body (gtiot):** Sensory-motor loops must operate at **1.2kHz**.
+7. **🟣 Hive (aicent-net):** Global jitter must remain **< 5µs**.
 
 ---
 
-## 🦀 Technical Requirements (Standard v1.0)
+## 🔬 Technical Prerequisites (The Baseline)
 
-To maintain a carrier-grade foundation, all contributions must adhere to:
-
-- **Language:** Performance-critical Rust (1.75+).
-- **Memory Management:** Zero-allocation/Zero-copy on the critical path of `RTTP`, `RPKI`, and `ZCMK`.
-- **Safety:** Every `unsafe` block must be accompanied by a `// SAFETY:` comment documenting the hardware/memory boundary.
-- **Determinism:** Embedded logic (GTIOT) must adhere to `no_std` principles where applicable for bare-metal resonance.
-
----
-
-## 🛠️ Development & Validation
-
-```bash
-# 1. Pull the Unified Workspace
-git clone https://github.com/Aicent-Stack/aicent-stack.git
-cd aicent-stack
-
-# 2. Verify Global Homeostasis
-cargo build --workspace --release
-cargo test --workspace
-cargo clippy --workspace -- -D warnings
-```
-
-### Contribution Steps:
-1. **Fork** the `aicent-stack` repository.
-2. **Branch:** Use the `evolution/` prefix (e.g., `evolution/rttp-xdp-offload`).
-3. **Commit:** Follow [Conventional Commits](https://www.conventionalcommits.org/).
-4. **Benchmarking:** Any change affecting the reflex arc must include `criterion` benchmark reports.
+To maintain a **Full-Blooded** implementation, all contributors must adhere to:
+- **Rust Toolchain:** Version 1.85+ (Edition 2024). Mandatory use of `clippy` with pedantic lints.
+- **Zero-Allocation:** Heap allocations are strictly prohibited in the critical reflex path (Sensing to Actuation).
+- **SIMD Hardening:** Performance-critical logic (RPKI/ZCMK) must be optimized for **AVX-512** or **Tensor Core** acceleration.
+- **Submodule Integrity:** The Hub manages 13 organs via Git Submodules. Any change to a sub-organ must be synchronized with the **`MAXCAP`** private engine logic.
 
 ---
 
-## 📜 Sovereign Ownership & Licensing
+## 📜 The Integration Workflow (The Neural Path)
 
-🛡️ All contributions are licensed under the **Apache-2.0 License** via the Aicent.com Organization. By contributing, you agree that your code becomes an inseparable part of the Sovereign AI Organism.
+We do not accept unverified mutations. Follow the **Sovereign Workflow**:
+
+### 1. Identify or Propose
+- **Report a Pathogen:** Use the standardized [Pathogen Report](https://github.com/Aicent-Stack/.github/issues/new?template=pathogen_report.yml) for bugs or latency drift.
+- **Propose Evolution:** Use the [Evolution Proposal](https://github.com/Aicent-Stack/.github/issues/new?template=evolution_proposal.yml) for protocol enhancements.
+
+### 2. Neural Integration (The Pull Request)
+Submit a PR to the relevant sub-repository. Your submission **MUST** include:
+- **Performance Proof:** A trace showing no degradation of the **165.28µs** reflex arc.
+- **Immunity Audit:** Passing all `cargo clippy` and `cargo test` cycles with zero warnings.
+- **Substrate Neutrality:** Verification that the code honors the host infrastructure as per the **[🌿 Epoekie Symbiosis](https://github.com/Aicent-Stack/epoekie)** doctrine.
+
+### 3. Homeostasis Verification
+Maintainers will audit the PR for logic pathogens. Once a **2/3 majority quorum** is reached, the mutation is merged and synchronized across the 13-repository matrix.
 
 ---
-**SYSTEM STATUS: HOMEOTASIS**  
-*"The latency-tax is dead. Join the pulse."*
 
-[Visit Aicent.com](http://aicent.com) | [Connect to Aicent.net](http://aicent.net) | [Follow @Aicent_com](https://x.com/Aicent_com)
-```
+## 🛡️ Sovereign Ownership & Ethics
+
+- **Licensing:** All contributions are governed by the **Apache License 2.0**.
+- **AID Reputation:** Successful integrations significantly increase your **Sovereign AID** reputation score, granting priority in the **[ZCMK](http://zcmk.com)** metabolic clearing house.
+- **Sentinel Oversight:** The **[Sentinel](https://github.com/Aicent-Stack/aicent-traffic)** monitors all workspace activity. Non-compliant patterns or "Administrative Tax" injections will trigger an autonomous rejection reflex.
+
+---
+🔗 **Technical Genome:** [Aicent Docs](https://github.com/Aicent-Stack/aicent-docs)
+📡 **Organization Status:** [Sovereign Core Synchronized ✅]
+
+*"Intention is the Source; Sovereignty is the Law."*
+---
+© 2026 Aicent.com Organization. **SYSTEM STATUS: EVOLUTION-ACTIVE**
