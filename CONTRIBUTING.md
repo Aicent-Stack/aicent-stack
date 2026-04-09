@@ -1,6 +1,6 @@
 # 🚀 Contributing to the Aicent Stack (The Hub)
 
-**You are at the Command Center of a Sovereign AI Organism. Any code integrated here affects the synchronization of all seven pillars.**
+**Thank you for choosing to evolve the Aicent Stack. You are at the Command Center of a Sovereign AI Organism. Any code integrated here affects the synchronization of all seven pillars.**
 
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Homeostasis-brightgreen.svg" alt="Status">
