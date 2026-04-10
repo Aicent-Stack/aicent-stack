@@ -3,20 +3,22 @@
 # ====================================================================
 # [THE SEVEN PILLARS OF SOVEREIGNTY]
 #
-# [SOUL]  EPOEKIE:   The Soul Layer  (Active / Standard)
-# [BRAIN] AICENT:    The Brain Layer (Active / Standard) [RFC-001]
-# [NERVE] RTTP:      The Nerves      (Active / Standard) [RFC-002]
-# [GUARD] RPKI:      The Immunity    (Active / Standard) [RFC-003]
-# [BLOOD] ZCMK:      The Blood       (Active / Standard) [RFC-004]
-# [BODY]  GTIOT:     The Body        (Active / Standard) [RFC-005]
-# [HIVE]  AICENT-NET: The Hive       (Active Evolution)  [RFC-006]
+# [SOUL]  EPOEKIE:   The Soul Layer (Global Registry: v0.1.0-alpha)
+# [BRAIN] AICENT:    The Brain Layer (Local Workspace) [RFC-001]
+# [NERVE] RTTP:      The Nerves      (Local Workspace) [RFC-002]
+# [GUARD] RPKI:      The Immunity    (Local Workspace) [RFC-003]
+# [BLOOD] ZCMK:      The Blood       (Local Workspace) [RFC-004]
+# [BODY]  GTIOT:     The Body        (Local Workspace) [RFC-005]
+# [HIVE]  AICENT-NET: The Hive       (Active Evolution) [RFC-006]
 # ====================================================================
 # Licensed under Apache-2.0 via Aicent.com Organization.
 
 [workspace]
-# Orchestrating the physical boundaries of the Seven-Pillar AI organism.
+# -----------------------------------------------------------------------------
+# INTEGRATED ORGANS: Physical Crate Manifolds in this Repository.
+# epoekie resides on crates.io as a Sovereign Constant and is called as a dependency.
+# -----------------------------------------------------------------------------
 members = [
-    "epoekie",      # The Sovereign Soul Layer
     "aicent",       # RFC-001: Cognitive Core
     "rttp",         # RFC-002: Neural Transport
     "rpki",         # RFC-003: Immune Defense
@@ -31,23 +33,26 @@ resolver = "2"
 
 [workspace.package]
 version = "1.0.0" # Official Sovereign Launch Version
-edition = "2024"  # Targeting the 2024 Edition for future-proofing
+edition = "2024"
 authors = ["Aicent Stack Team <alliances@aicent.com>"]
 license = "Apache-2.0"
 repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-rust-version = "1.85.0" # Mandating 1.85+ for native i128 and Edition 2024
-keywords = ["sovereign-ai", "low-latency", "rfc-standard", "128-bit-atomic", "epoekie"]
-categories = ["asynchronous", "embedded", "network-programming", "cryptography", "distributed-computing"]
+rust-version = "1.85.0"
+keywords = ["sovereign-ai", "low-latency", "rfc-standard", "epoekie", "aicent"]
+categories = ["asynchronous", "network-programming", "cryptography", "distributed-computing"]
 
 # ====================================================================
 # [WORKSPACE DEPENDENCIES] - The Integrated Genetic Bank
-# Centralized versioning ensures absolute metabolic consistency across domains.
 # ====================================================================
 
 [workspace.dependencies]
-# --- Internal Domain Linking (The Seven-Pillar Integration) ---
-epoekie    = { path = "epoekie" }
+# --- THE SOVEREIGN LINK: Calling the Soul from the Global Registry ---
+# We no longer point to a local path. We pull the official 'epoekie' 
+# standard directly from crates.io to demonstrate planetary-scale resonance.
+epoekie = { version = "0.1.0-alpha" }
+
+# --- Internal Domain Linking (Atomic Workspaces) ---
 aicent     = { path = "aicent" }
 rttp       = { path = "rttp" }
 rpki       = { path = "rpki" }
@@ -57,14 +62,14 @@ aicent-net = { path = "aicent-net" }
 
 # --- High-Performance Asynchronous & Concurrency Primitives ---
 tokio = { version = "1.37", features = ["full"] }
-rayon = "1.10"                 # Parallel SIMD scanning for RPKI verification
-crossbeam = "0.8"              # Lock-free data primitives for 128-bit manifolds
-crossbeam-queue = "0.3"        # Nanosecond task shunting for RTBA matching
-crossbeam-channel = "0.5"      # High-frequency inter-organ messaging
-parking_lot = "0.12"           # Hardware-optimized mutexes for low-jitter loops
-once_cell = "1.19"             # Safe thread-safe initialization of neural states
-async-trait = "0.1"            # Trait abstraction for cognitive orchestration
-futures = "0.3"                # High-throughput stream handling for Hive synchronization
+rayon = "1.10"
+crossbeam = "0.8"
+crossbeam-queue = "0.3"
+crossbeam-channel = "0.5"
+parking_lot = "0.12"
+once_cell = "1.19"
+async-trait = "0.1"
+futures = "0.3"
 
 # --- Data Sovereignty & Memory Safety ---
 serde = { version = "1.0", features = ["derive"] }
@@ -72,26 +77,26 @@ serde_json = "1.0"
 bytes = { version = "1.6", features = ["serde"] } 
 smallvec = { version = "1.13", features = ["serde"] } 
 num-traits = { version = "0.2", default-features = false, features = ["libm"] } 
-zeroize = { version = "1.7", features = ["derive"] } # Secure memory zeroing
+zeroize = { version = "1.7", features = ["derive"] }
 
-# --- Cryptography & Physical Guard (The Immune DNA) ---
-ring = "0.17"                  # Hardware-accelerated crypto for Tensor watermarks
-sha2 = "0.10"                  # Merkle-DAG hashing for ROA-style attestation
+# --- Cryptography & Physical Guard ---
+ring = "0.17"
+sha2 = "0.10"
 
-# --- Hardware-Native Adaptation (Embodied Intelligence) ---
+# --- Hardware-Native Adaptation ---
 embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
 embassy-time = { version = "0.3", features = ["std"] } 
 nalgebra = { version = "0.32", default-features = false, features = ["libm"] } 
 
-# --- Telemetry & Diagnostics ---
+# --- Telemetry, Diagnostics & Benchmarking ---
 anyhow = "1.0"
 thiserror = "1.0"
-tracing = "0.1"                # Planetary-scale grid telemetry
-rand = "0.8"                   # Simulated entropy for RPKI chaos testing
+tracing = "0.1"
+rand = "0.8"
 criterion = { version = "0.5", features = ["async_tokio"] }
 
 # ====================================================================
-# [WORKSPACE LINTS] - Quality Gating (Carrier-Grade Rigor)
+# [WORKSPACE LINTS] - Quality Gating
 # ====================================================================
 
 [workspace.lints.rust]
@@ -109,8 +114,8 @@ pedantic = "warn"
 # ====================================================================
 
 [profile.release]
-opt-level = 3                 # Maximum optimization for production reflexes
-lto = "fat"                   # Full Link-Time Optimization across all 13 organs
-codegen-units = 1             # Better binary density and cache locality
-panic = "abort"               # Ensures absolute determinism
-strip = true                  # Remove symbols to minimize binary footprint
+opt-level = 3
+lto = "fat"                   # Full Link-Time Optimization for cross-organ fusion
+codegen-units = 1
+panic = "abort"
+strip = true
