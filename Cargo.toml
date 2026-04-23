@@ -1,121 +1,82 @@
-# Aicent Stack | The Sovereign AI Nervous System
-# Domain: http://aicent.com & http://aicent.net & http://epoekie.com
-# ====================================================================
-# [THE SEVEN PILLARS OF SOVEREIGNTY]
-#
-# [SOUL]  EPOEKIE:   The Soul Layer (Global Registry: v0.1.0-alpha)
-# [BRAIN] AICENT:    The Brain Layer (Local Workspace) [RFC-001]
-# [NERVE] RTTP:      The Nerves      (Local Workspace) [RFC-002]
-# [GUARD] RPKI:      The Immunity    (Local Workspace) [RFC-003]
-# [BLOOD] ZCMK:      The Blood       (Local Workspace) [RFC-004]
-# [BODY]  GTIOT:     The Body        (Local Workspace) [RFC-005]
-# [HIVE]  AICENT-NET: The Hive       (Active Evolution) [RFC-006]
-# ====================================================================
-# Licensed under Apache-2.0 via Aicent.com Organization.
-
-[workspace]
-# -----------------------------------------------------------------------------
-# INTEGRATED ORGANS: Physical Crate Manifolds in this Repository.
-# epoekie resides on crates.io as a Sovereign Constant and is called as a dependency.
-# -----------------------------------------------------------------------------
-members = [
-    "aicent",       # RFC-001: Cognitive Core
-    "rttp",         # RFC-002: Neural Transport
-    "rpki",         # RFC-003: Immune Defense
-    "zcmk",         # RFC-004: Metabolic Clearing
-    "gtiot",        # RFC-005: Embodied Execution
-    "aicent-net",   # RFC-006: Global Operational Grid
-    "aicent-demo",  # The Living Proof (MVO Suite)
-]
-
-# Resolver v2 ensures conflict-free feature resolution for 128-bit manifolds.
-resolver = "2"
-
-[workspace.package]
-version = "1.0.0" # Official Sovereign Launch Version
-edition = "2024"
-authors = ["Aicent Stack Team <alliances@aicent.com>"]
+[package]
+name = "aicent-stack"
+version = "1.2.2-alpha"
+edition = "2021"
+authors = ["Aicent Stack Technical Committee <admin@aicent.com>"]
+description = "The Grand Orchestrator for Aicent Stack. The 128-bit supreme root of the indivisible 16-Pillar sovereign AI lifeform 2026."
 license = "Apache-2.0"
-repository = "https://github.com/Aicent-Stack"
 homepage = "http://aicent.com"
-rust-version = "1.85.0"
-keywords = ["sovereign-ai", "low-latency", "rfc-standard", "epoekie", "aicent"]
-categories = ["asynchronous", "network-programming", "cryptography", "distributed-computing"]
+repository = "http://github.com/Aicent-Stack/aicent-stack"
 
-# ====================================================================
-# [WORKSPACE DEPENDENCIES] - The Integrated Genetic Bank
-# ====================================================================
+# =========================================================================
+# THE GRAND SUTURE: THE 15 ORGANS OF THE EMPIRE
+# All dependencies are locked to v1.2.2-Alpha for total 128-bit synchronization.
+# =========================================================================
 
-[workspace.dependencies]
-# --- THE SOVEREIGN LINK: Calling the Soul from the Global Registry ---
-# We no longer point to a local path. We pull the official 'epoekie' 
-# standard directly from crates.io to demonstrate planetary-scale resonance.
-epoekie = { version = "0.1.0-alpha" }
+[dependencies]
+# --- Physiological Core (000 - 007) ---
+# The primary biological axis of the Sovereign AI Lifeform.
+epoekie    = { version = "1.2.2-alpha" } # RFC-000: Soul (Root DNA)
+aicent     = { version = "1.2.2-alpha" } # RFC-001: Brain (Cognition)
+rttp       = { version = "1.2.2-alpha" } # RFC-002: Nerve (Transmission)
+rpki-com   = { version = "1.2.2-alpha" } # RFC-003: Immunity (Security)
+zcmk       = { version = "1.2.2-alpha" } # RFC-004: Blood (Economics)
+gtiot      = { version = "1.2.2-alpha" } # RFC-005: Body (Execution)
+aicent-net = { version = "1.2.2-alpha" } # RFC-006: Hive (Resonance)
+bewho      = { version = "1.2.2-alpha" } # RFC-007: Persona (Psychology)
 
-# --- Internal Domain Linking (Atomic Workspaces) ---
-aicent     = { path = "aicent" }
-rttp       = { path = "rttp" }
-rpki       = { path = "rpki" }
-zcmk       = { path = "zcmk" }
-gtiot      = { path = "gtiot" }
-aicent-net = { path = "aicent-net" }
+# --- Application & Civilization Layer (008 - 013) ---
+# The public social and economic interface of the Empire.
+cmtn       = { version = "1.2.2-alpha" } # RFC-008: Civilization (Diplomacy)
+iqa-org    = { version = "1.2.2-alpha" } # RFC-009: Certification (Authority)
+sascar     = { version = "1.2.2-alpha" } # RFC-010: Mobility (Coordination)
+itsun      = { version = "1.2.2-alpha" } # RFC-011: Energy (Sustainability)
+moloon     = { version = "1.2.2-alpha" } # RFC-012: Mirror/Time (Persistence)
+dioon      = { version = "1.2.2-alpha" } # RFC-013: Timing/Organic (Wisdom)
 
-# --- High-Performance Asynchronous & Concurrency Primitives ---
-tokio = { version = "1.37", features = ["full"] }
-rayon = "1.10"
-crossbeam = "0.8"
-crossbeam-queue = "0.3"
-crossbeam-channel = "0.5"
-parking_lot = "0.12"
-once_cell = "1.19"
-async-trait = "0.1"
+# --- Commercial Advantage Layer ---
+# The private heart of the Positive-Sum value metabolism.
+maxcap     = { version = "1.2.2-alpha" } # Private Shunting Engine
+
+# --- External Ecosystem (Metabolic Support) ---
+# Standardized for 128-bit serialization and async 1.2kHz orchestration.
+serde   = { version = "1.0", features = ["derive"] }
+tokio   = { version = "1.0", features = ["full"] }
 futures = "0.3"
 
-# --- Data Sovereignty & Memory Safety ---
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-bytes = { version = "1.6", features = ["serde"] } 
-smallvec = { version = "1.13", features = ["serde"] } 
-num-traits = { version = "0.2", default-features = false, features = ["libm"] } 
-zeroize = { version = "1.7", features = ["derive"] }
+# =========================================================================
+# IMPERIAL FEATURES (The Master Ignition Switch)
+# =========================================================================
 
-# --- Cryptography & Physical Guard ---
-ring = "0.17"
-sha2 = "0.10"
+[features]
+# Full-Blood mode is the supreme default for the 2026 Imperial Cycle. 
+# It activates the 10ms Global Metabolic Penalty across ALL 16 pillars.
+default = ["full-blood"]
+full-blood = [
+    "epoekie/full-blood",
+    "aicent/full-blood",
+    "rttp/full-blood",
+    "rpki-com/full-blood",
+    "zcmk/full-blood",
+    "gtiot/full-blood",
+    "aicent-net/full-blood",
+    "bewho/full-blood",
+    "cmtn/full-blood",
+    "iqa-org/full-blood",
+    "sascar/full-blood",
+    "itsun/full-blood",
+    "moloon/full-blood",
+    "dioon/full-blood",
+    "maxcap/full-blood"
+]
 
-# --- Hardware-Native Adaptation ---
-embassy-executor = { version = "0.5", features = ["task-arena-size-32768"] }
-embassy-time = { version = "0.3", features = ["std"] } 
-nalgebra = { version = "0.32", default-features = false, features = ["libm"] } 
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
 
-# --- Telemetry, Diagnostics & Benchmarking ---
-anyhow = "1.0"
-thiserror = "1.0"
-tracing = "0.1"
-rand = "0.8"
-criterion = { version = "0.5", features = ["async_tokio"] }
-
-# ====================================================================
-# [WORKSPACE LINTS] - Quality Gating
-# ====================================================================
-
-[workspace.lints.rust]
-unsafe_op_in_unsafe_fn = "warn"
-missing_docs = "warn"
-
-[workspace.lints.clippy]
-undocumented_unsafe_blocks = "warn"
-manual_memcpy = "warn"
-perf = "warn"
-pedantic = "warn"
-
-# ====================================================================
-# [RELEASE PROFILES] - Engineered for Sub-Millisecond Finality
-# ====================================================================
-
-[profile.release]
-opt-level = 3
-lto = "fat"                   # Full Link-Time Optimization for cross-organ fusion
-codegen-units = 1
-panic = "abort"
-strip = true
+# [IMPERIAL_SUTURE_SYNC_2026]
+# aicent-stack is the gravitational center. By referencing this root, 
+# all institutional nodes are physically bound to mirror the full infrastructure.
+# Metadata: No-SSL Tax Mode Enabled (Strictly HTTP).
+# Standard: Absolute 128-Bit Numeric Purity Enforced.
+# Chronos: 2026 Imperial Calendar Aligned.
