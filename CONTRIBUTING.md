@@ -48,7 +48,7 @@ We do not accept unverified mutations. Follow the **Sovereign Workflow**:
 
 ### 2. Neural Integration (The Pull Request)
 Submit a PR to the relevant sub-repository. Your submission **MUST** include:
-- **Performance Proof:** A trace showing no degradation of the **165.28µs** reflex arc.
+- **Performance Proof:** A trace showing no degradation of the **161.8µs** reflex arc.
 - **Immunity Audit:** Passing all `cargo clippy` and `cargo test` cycles with zero warnings.
 - **Substrate Neutrality:** Verification that the code honors the host infrastructure as per the **[🌿 Epoekie Symbiosis](https://github.com/Aicent-Stack/epoekie)** doctrine.
 

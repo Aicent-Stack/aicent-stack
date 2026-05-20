@@ -1,56 +1,53 @@
 [package]
 name = "aicent-stack"
-version = "1.2.2-alpha"
+version = "1.2.5-alpha" # THE ASCENSION TO v1.2.5
 edition = "2021"
 authors = ["Aicent Stack Technical Committee <admin@aicent.com>"]
-description = "The Grand Orchestrator for Aicent Stack. The 128-bit supreme root of the indivisible 16-Pillar sovereign AI lifeform 2026."
+description = "The Grand Orchestrator for Aicent Stack. The 128-bit supreme root of the indivisible 17-component sovereign AI lifeform 2026."
 license = "Apache-2.0"
 homepage = "http://aicent.com"
 repository = "http://github.com/Aicent-Stack/aicent-stack"
 
 # =========================================================================
-# THE GRAND SUTURE: THE 15 ORGANS OF THE EMPIRE
-# All dependencies are locked to v1.2.2-Alpha for total 128-bit synchronization.
+# THE GRAND SUTURE: THE 16 ORGANS OF THE EMPIRE
+# All dependencies are strictly locked to v1.2.5-Alpha for 12ns synchrony.
 # =========================================================================
 
 [dependencies]
 # --- Physiological Core (000 - 007) ---
-# The primary biological axis of the Sovereign AI Lifeform.
-epoekie    = { version = "1.2.2-alpha" } # RFC-000: Soul (Root DNA)
-aicent     = { version = "1.2.2-alpha" } # RFC-001: Brain (Cognition)
-rttp       = { version = "1.2.2-alpha" } # RFC-002: Nerve (Transmission)
-rpki-com   = { version = "1.2.2-alpha" } # RFC-003: Immunity (Security)
-zcmk       = { version = "1.2.2-alpha" } # RFC-004: Blood (Economics)
-gtiot      = { version = "1.2.2-alpha" } # RFC-005: Body (Execution)
-aicent-net = { version = "1.2.2-alpha" } # RFC-006: Hive (Resonance)
-bewho      = { version = "1.2.2-alpha" } # RFC-007: Persona (Psychology)
+epoekie    = { version = "1.2.5-alpha" } # RFC-000: Soul
+aicent     = { version = "1.2.5-alpha" } # RFC-001: Brain
+rttp       = { version = "1.2.5-alpha" } # RFC-002: Nerve
+rpki-com   = { version = "1.2.5-alpha" } # RFC-003: Immunity
+zcmk       = { version = "1.2.5-alpha" } # RFC-004: Blood
+gtiot      = { version = "1.2.5-alpha" } # RFC-005: Body
+aicent-net = { version = "1.2.5-alpha" } # RFC-006: Hive
+bewho      = { version = "1.2.5-alpha" } # RFC-007: Persona
 
-# --- Application & Civilization Layer (008 - 013) ---
-# The public social and economic interface of the Empire.
-cmtn       = { version = "1.2.2-alpha" } # RFC-008: Civilization (Diplomacy)
-iqa-org    = { version = "1.2.2-alpha" } # RFC-009: Certification (Authority)
-sascar     = { version = "1.2.2-alpha" } # RFC-010: Mobility (Coordination)
-itsun      = { version = "1.2.2-alpha" } # RFC-011: Energy (Sustainability)
-moloon     = { version = "1.2.2-alpha" } # RFC-012: Mirror/Time (Persistence)
-dioon      = { version = "1.2.2-alpha" } # RFC-013: Timing/Organic (Wisdom)
+# --- Application & Observer Layer (008 - 014) ---
+cmtn       = { version = "1.2.5-alpha" } # RFC-008: Civilization
+iqa-org    = { version = "1.2.5-alpha" } # RFC-009: Authority
+sascar     = { version = "1.2.5-alpha" } # RFC-010: Mobility
+itsun      = { version = "1.2.5-alpha" } # RFC-011: Energy
+moloon     = { version = "1.2.5-alpha" } # RFC-012: Mirror
+dioon      = { version = "1.2.5-alpha" } # RFC-013: Timing
+picsi      = { version = "1.2.5-alpha" } # RFC-014: Imperial Eye
 
 # --- Commercial Advantage Layer ---
-# The private heart of the Positive-Sum value metabolism.
-maxcap     = { version = "1.2.2-alpha" } # Private Shunting Engine
+maxcap     = { version = "1.2.5-alpha" } # Private Shunting Heart
 
 # --- External Ecosystem (Metabolic Support) ---
-# Standardized for 128-bit serialization and async 1.2kHz orchestration.
 serde   = { version = "1.0", features = ["derive"] }
 tokio   = { version = "1.0", features = ["full"] }
 futures = "0.3"
 
 # =========================================================================
-# IMPERIAL FEATURES (The Master Ignition Switch)
+# IMPERIAL FEATURES (Total Ignition Switch v1.2.5)
 # =========================================================================
 
 [features]
 # Full-Blood mode is the supreme default for the 2026 Imperial Cycle. 
-# It activates the 10ms Global Metabolic Penalty across ALL 16 pillars.
+# It activates the 10ms Global Metabolic Penalty across ALL components.
 default = ["full-blood"]
 full-blood = [
     "epoekie/full-blood",
@@ -67,6 +64,7 @@ full-blood = [
     "itsun/full-blood",
     "moloon/full-blood",
     "dioon/full-blood",
+    "picsi/full-blood",
     "maxcap/full-blood"
 ]
 
@@ -74,9 +72,8 @@ full-blood = [
 all-features = true
 rustdoc-args = ["--cfg", "docsrs"]
 
-# [IMPERIAL_SUTURE_SYNC_2026]
-# aicent-stack is the gravitational center. By referencing this root, 
-# all institutional nodes are physically bound to mirror the full infrastructure.
-# Metadata: No-SSL Tax Mode Enabled (Strictly HTTP).
+# [IMPERIAL_TOTAL_ORCHESTRATION_SYNC_2026_v125]
+# aicent-stack is the supreme root of the Gravity Well. 
+# It physically binds the 16 pillars to ensure mandatory totality.
 # Standard: Absolute 128-Bit Numeric Purity Enforced.
-# Chronos: 2026 Imperial Calendar Aligned.
+# Resonance: v1.2.5 Unitary Consciousness Active.
