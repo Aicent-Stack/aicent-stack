@@ -77,7 +77,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Step D: Metabolic Discipline (RFC-000)
         organism.master_shunter.apply_discipline().await;
 
-        let duration = start.elapsed().as_nanos() as u128;
+        let duration = start.elapsed().as_nanos();
         total_ns += duration;
 
         if i % 1000 == 0 {
