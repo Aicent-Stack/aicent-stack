@@ -45,9 +45,9 @@ pub use picsi;       // RFC-014: Imperial Eye
 pub use maxcap;      // Commercial Heart
 
 // REPAIRED: Purifying root scope and removing redundant Trait imports to fix warnings.
-use epoekie::{AID, HomeostasisScore, SovereignShunter, Picotoken, SovereignLifeform, verify_organism};
-use maxcap::{AdvantageEngine};
-use picsi::{PICSIController};
+pub use epoekie::{AID, HomeostasisScore, SovereignShunter, Picotoken, SovereignLifeform, verify_organism};
+pub use maxcap::{AdvantageEngine};
+pub use picsi::{PICSIController};
 
 // =========================================================================
 // 1. ORGANISM DATA STRUCTURES (The Imperial Life-signs)
