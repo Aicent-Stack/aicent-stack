@@ -31,6 +31,8 @@ As of **May 21, 2026**, following the final consolidation of **Version 1.2.5**, 
 
 In the V1.3.0-Alpha "Baptismal" stress tests, Aicent Stack achieved a multi-dimensional physical collapse of latency:
 
+<img width="1788" height="816" alt="2026-05-25_223200_971" src="https://github.com/user-attachments/assets/85d353db-f20e-4ffe-b9a5-3b1bcd8aea2f" />
+
 | Metric | V1.2.5 (Open-Source) | **V1.3.0 (Sovereign)** | Gain Factor |
 | :--- | :--- | :--- | :--- |
 | **Golden Reflex Arc** | 161,862 ns (161.8 µs) | **349 ns (0.349 µs)** | **463.7x** |
