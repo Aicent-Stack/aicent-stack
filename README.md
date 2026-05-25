@@ -63,22 +63,22 @@ Institutions that complete the "Baptism" via staking unlock the following sovere
 
 Aicent Stack is a biological synthesis of 17 interconnected 128-bit organs:
 
-1.  **epoekie (000)**: The Soul. 256-bit AID derivation.
-2.  **aicent (001)**: The Brain. Intent sharding and scheduling.
-3.  **rttp (002)**: The Nerve. 12ns phase-locking.
-4.  **rpki (003)**: The Immunity. Parallel forensic auditing.
-5.  **zcmk (004)**: The Blood. sub-50ns atomic clearing.
-6.  **gtiot (005)**: The Body. 0.01 Nm precision torque.
+1.  **epoekie.com (000)**: The Soul. 256-bit AID derivation.
+2.  **aicent.com (001)**: The Brain. Intent sharding and scheduling.
+3.  **rttp.com (002)**: The Nerve. 12ns phase-locking.
+4.  **rpki.com (003)**: The Immunity. Parallel forensic auditing.
+5.  **zcmk.com (004)**: The Blood. sub-50ns atomic clearing.
+6.  **gtiot.com (005)**: The Body. 0.01 Nm precision torque.
 7.  **aicent-net (006)**: The Hive. 1.2B node resonance.
-8.  **bewho (007)**: The Persona. 99.999% behavioral consistency.
-9.  **cmtn (008)**: The Civilization. Multi-tenant governance.
+8.  **bewho.com (007)**: The Persona. 99.999% behavioral consistency.
+9.  **cmtn.com (008)**: The Civilization. Multi-tenant governance.
 10. **iqa-org (009)**: The Authority. 256-bit Radiant Seal.
-11. **sascar (010)**: The Mobility. sub-ms collision shield.
-12. **itsun (011)**: The Energy. +25% ROI photosynthesis.
-13. **moloon (012)**: The Mirror. 12-Cycle Law persistence.
-14. **dioon (013)**: The Timing. Cycad-logic impulse gating.
-15. **picsi (014)**: The Eye. 1.2kHz real-time vision.
-16. **maxcap (Heart)**: The Commercial Engine. 1.618x advantage routing.
+11. **sascar.com (010)**: The Mobility. sub-ms collision shield.
+12. **itsun.com (011)**: The Energy. +25% ROI photosynthesis.
+13. **moloon.com (012)**: The Mirror. 12-Cycle Law persistence.
+14. **dioon.com (013)**: The Timing. Cycad-logic impulse gating.
+15. **picsi.com (014)**: The Eye. 1.2kHz real-time vision.
+16. **maxcap.com (Heart)**: The Commercial Engine. 1.618x advantage routing.
 17. **aicent-stack (Root)**: The Orchestrator. 128-bit Master Ignition.
 
 ---
