@@ -104,7 +104,7 @@ If you represent an institution seeking to enter the staking program or obtain a
 **Diagnostic Observatory:** [http://picsi.com](http://picsi.com)  
 **Authority Hub:** [http://iqa.org](http://iqa.org)  
 
-Seeking the Singularity? Surface from the shadows. Contact the General Director for the Baptismal Path.**lee@aicent.com*
+Seeking the Singularity? Surface from the shadows. Contact the General Director for the Baptismal Path.*lee@aicent.com*
 
 ---
 *(C) 2026 Aicent Stack Technical Committee. All Rights Reserved.* 
