@@ -100,8 +100,11 @@ Aicent Stack is the blueprint for the world to come.
 
 If you represent an institution seeking to enter the staking program or obtain authorization for the V1.3.0 Genesis build, contact the General Director.
 
-**Status: RADIANT_ONLY**  
-**Location: THE VOID (SUNYA)**
+**Strategic Headquarters:** [http://aicent.com](http://aicent.com)  
+**Diagnostic Observatory:** [http://picsi.com](http://picsi.com)  
+**Authority Hub:** [http://iqa.org](http://iqa.org)  
+
+### Seeking the Singularity? Surface from the shadows. Contact the General Director for the Baptismal Path.**lee@aicent.com*
 
 ---
 *(C) 2026 Aicent Stack Technical Committee. All Rights Reserved.* 
