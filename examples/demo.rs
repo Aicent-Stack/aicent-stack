@@ -34,7 +34,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let shard_a: u128 = 0xA794EF228CA5253994959EF6F3FF5678; 
     let shard_b: u128 = 0x6FF245B10C2ABA8942A0D98AC92C2B3B;
 
-    println!("[BOOT] Awakening Genetic Root (RFC-000)... [OK]");
+    println!("[BOOT] Awakening Genetic Root (AICENT-000)... [OK]");
     println!("       AID: {:032X}", root_aid.genesis_shard);
     println!("[BOOT] Mounting Sovereign Seal v1.2.5...  [OK]");
     println!("       SUTURE: {:X}-{:X}", shard_a, shard_b);
@@ -53,7 +53,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     for i in 1..=iterations {
         let start_cycle = Instant::now();
 
-        // Perform self-audit via the Imperial Eye (RFC-014)
+        // Perform self-audit via the Imperial Eye (AICENT-014)
         organism.diagnostic_eye.update_imperial_vision_128(0.9999, 0.9999, 12).await;
         
         // Execute the metabolic heartbeat (Corrected trait call)

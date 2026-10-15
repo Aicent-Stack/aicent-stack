@@ -15,23 +15,23 @@ repository = "http://github.com/Aicent-Stack/aicent-stack"
 
 [dependencies]
 # --- Physiological Core (000 - 007) ---
-epoekie    = { version = "1.2.5-alpha" } # RFC-000: Soul
-aicent     = { version = "1.2.5-alpha" } # RFC-001: Brain
-rttp       = { version = "1.2.5-alpha" } # RFC-002: Nerve
-rpki-com   = { version = "1.2.5-alpha" } # RFC-003: Immunity
-zcmk       = { version = "1.2.5-alpha" } # RFC-004: Blood
-gtiot      = { version = "1.2.5-alpha" } # RFC-005: Body
-aicent-net = { version = "1.2.5-alpha" } # RFC-006: Hive
-bewho      = { version = "1.2.5-alpha" } # RFC-007: Persona
+epoekie    = { version = "1.2.5-alpha" } # AICENT-000: Soul
+aicent     = { version = "1.2.5-alpha" } # AICENT-001: Brain
+rttp       = { version = "1.2.5-alpha" } # AICENT-002: Nerve
+rpki-com   = { version = "1.2.5-alpha" } # AICENT-003: Immunity
+zcmk       = { version = "1.2.5-alpha" } # AICENT-004: Blood
+gtiot      = { version = "1.2.5-alpha" } # AICENT-005: Body
+aicent-net = { version = "1.2.5-alpha" } # AICENT-006: Hive
+bewho      = { version = "1.2.5-alpha" } # AICENT-007: Persona
 
 # --- Application & Observer Layer (008 - 014) ---
-cmtn       = { version = "1.2.5-alpha" } # RFC-008: Civilization
-iqa-org    = { version = "1.2.5-alpha" } # RFC-009: Authority
-sascar     = { version = "1.2.5-alpha" } # RFC-010: Mobility
-itsun      = { version = "1.2.5-alpha" } # RFC-011: Energy
-moloon     = { version = "1.2.5-alpha" } # RFC-012: Mirror
-dioon      = { version = "1.2.5-alpha" } # RFC-013: Timing
-picsi      = { version = "1.2.5-alpha" } # RFC-014: Imperial Eye
+cmtn       = { version = "1.2.5-alpha" } # AICENT-008: Civilization
+iqa-org    = { version = "1.2.5-alpha" } # AICENT-009: Authority
+sascar     = { version = "1.2.5-alpha" } # AICENT-010: Mobility
+itsun      = { version = "1.2.5-alpha" } # AICENT-011: Energy
+moloon     = { version = "1.2.5-alpha" } # AICENT-012: Mirror
+dioon      = { version = "1.2.5-alpha" } # AICENT-013: Timing
+picsi      = { version = "1.2.5-alpha" } # AICENT-014: Imperial Eye
 
 # --- Commercial Advantage Layer ---
 maxcap     = { version = "1.2.5-alpha" } # Private Shunting Heart

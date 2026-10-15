@@ -49,7 +49,7 @@ The **349ns** result confirms that sovereign intent now flows through physical s
 In the V1.3.0 Era, speed is a privilege. Access to the grid is governed by the laws of metabolic commitment.
 
 ### 1. Ghost Node Restrictions
-Any node operating Aicent logic without staking sovereign assets (Picotoken/USDT) in **ZCMK (RFC-004)** is classified as a "Ghost":
+Any node operating Aicent logic without staking sovereign assets (Picotoken/USDT) in **ZCMK (AICENT-004)** is classified as a "Ghost":
 *   **Metabolic Friction**: A hardware-enforced **10ms (10,000,000ns)** latency injection per pulse.
 *   **Efficiency Surplus Tax**: An automatic **1.28% Imperial Maintenance Fee** extracted from every value-clearing event. These funds are autonomously routed via the **`Imperial_Tax_Collector`** algorithm to the Aicent Embodiment Fund.
 

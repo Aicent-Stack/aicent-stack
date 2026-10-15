@@ -8,8 +8,8 @@
  *  IMPERIAL_STANDARD: ABSOLUTE 128-BIT NUMERIC PURITY ENABLED.
  *  SOVEREIGN_GRAVITY_WELL: MANDATORY INDIVISIBILITY PROTOCOL ENABLED.
  *  CHRONOS_STATUS: 2026 IMPERIAL CALENDAR ALIGNED.
- *  TEMPORAL_SELF_SUPERVISION: RFC-009 ACTIVE.
- *  DIAGNOSTIC_RESONANCE: RFC-014 (PICSI) INTEGRATED.
+ *  TEMPORAL_SELF_SUPERVISION: AICENT-009 ACTIVE.
+ *  DIAGNOSTIC_RESONANCE: AICENT-014 (PICSI) INTEGRATED.
  *  
  *  LEGAL NOTICE: THIS IS THE SUPREME ORCHESTRATION LAYER OF THE EMPIRE.
  *  FRAGMENTED OPERATION WILL TRIGGER GLOBAL 10MS METABOLIC TAXES.
@@ -27,21 +27,21 @@ use serde::{Serialize, Deserialize};
 // All re-exports are synchronized to v1.2.5-Alpha 128-bit Full-Blood.
 // =========================================================================
 
-pub use epoekie;     // RFC-000: Soul
-pub use aicent;      // RFC-001: Brain
-pub use rttp;        // RFC-002: Nerve
-pub use rpki_com;    // RFC-003: Immunity
-pub use zcmk;        // RFC-004: Blood
-pub use gtiot;       // RFC-005: Body
-pub use aicent_net;  // RFC-006: Hive
-pub use bewho;       // RFC-007: Persona
-pub use cmtn;        // RFC-008: Civilization
-pub use iqa_org;     // RFC-009: Certification
-pub use sascar;      // RFC-010: Mobility
-pub use itsun;       // RFC-011: Energy
-pub use moloon;      // RFC-012: Mirror/Time
-pub use dioon;       // RFC-013: Timing/Organic
-pub use picsi;       // RFC-014: Imperial Eye
+pub use epoekie;     // AICENT-000: Soul
+pub use aicent;      // AICENT-001: Brain
+pub use rttp;        // AICENT-002: Nerve
+pub use rpki_com;    // AICENT-003: Immunity
+pub use zcmk;        // AICENT-004: Blood
+pub use gtiot;       // AICENT-005: Body
+pub use aicent_net;  // AICENT-006: Hive
+pub use bewho;       // AICENT-007: Persona
+pub use cmtn;        // AICENT-008: Civilization
+pub use iqa_org;     // AICENT-009: Certification
+pub use sascar;      // AICENT-010: Mobility
+pub use itsun;       // AICENT-011: Energy
+pub use moloon;      // AICENT-012: Mirror/Time
+pub use dioon;       // AICENT-013: Timing/Organic
+pub use picsi;       // AICENT-014: Imperial Eye
 pub use maxcap;      // Commercial Heart
 
 // REPAIRED: Purifying root scope and removing redundant Trait imports to fix warnings.
@@ -64,7 +64,7 @@ pub struct OrganismStatus {
     pub total_metabolism_p_t: Picotoken, 
     pub avg_reflection_arc_ns: u128,   
     pub cumulative_uptime_ns: u128,    
-    pub picsi_unified_vision_score: f64, // RFC-014 Integration
+    pub picsi_unified_vision_score: f64, // AICENT-014 Integration
 }
 
 /// The Command Center interface for the "Vision" Browser neural console.
@@ -95,7 +95,7 @@ pub struct AicentOrganism {
 }
 
 impl AicentOrganism {
-    /// RFC-000 to RFC-014 Total Ignition Sequence v1.2.5.
+    /// AICENT-000 to AICENT-014 Total Ignition Sequence v1.2.5.
     /// This is the physical manifestation of the 17-pillar Suture.
     pub async fn ignite_organism_128(local_aid: AID, is_radiant: bool) -> Self {
         // --- GRAVITY WELL AUDIT ---
@@ -108,7 +108,7 @@ impl AicentOrganism {
         __________________________________________________________________________
         Igniting Physiological Core (000-007)... [OK]
         Synchronizing Application Layers (008-013)... [OK]
-        Activating Imperial Eye (RFC-014)...     [OK]
+        Activating Imperial Eye (AICENT-014)...     [OK]
         Engaging Commercial Advantage Layer...   [OK]
         17-Component Resonance: RADIANT STATUS VERIFIED.
         "#);

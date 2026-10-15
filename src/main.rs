@@ -22,7 +22,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     
                PROTOCOL: FULL-BLOOD 128-BIT PRECISION
                STATUS:   SOVEREIGN_GRAVITY_WELL_ACTIVE
-               VISION:   RFC-014 PICSI OBSERVATORY ONLINE
+               VISION:   AICENT-014 PICSI OBSERVATORY ONLINE
     __________________________________________________________________________
     "#);
 
@@ -59,7 +59,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     for i in 1..=iterations {
         let start = Instant::now();
 
-        // Step A: Intent Generation (RFC-001)
+        // Step A: Intent Generation (AICENT-001)
         let intent = aicent::ExecutiveIntent {
             intent_id_128: i,
             target_node_aid: node_aid,
@@ -71,10 +71,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // Step B: Cognitive Decomposition (Full-Blood v1.2.5)
         let _actions = brain.decompose_intent_128(intent).await?;
 
-        // Step C: Imperial Eye Observation (RFC-014) 
+        // Step C: Imperial Eye Observation (AICENT-014) 
         organism.diagnostic_eye.update_imperial_vision_128(0.9999, 0.9999, 12).await;
 
-        // Step D: Metabolic Discipline (RFC-000)
+        // Step D: Metabolic Discipline (AICENT-000)
         organism.master_shunter.apply_discipline().await;
 
         let duration = start.elapsed().as_nanos();
