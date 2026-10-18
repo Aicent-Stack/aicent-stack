@@ -7,7 +7,7 @@
 
 > **"This is not infrastructure for intelligence. This is intelligence itself."**
 
-**⚪ [AICENT](http://aicent.com) | 💎 [RTTP](http://rttp.com) | 🔴 [RPKI](http://rpki.com) | 🟢 [ZCMK](http://zcmk.com) | 🟡 [GTIOT](http://gtiot.com) | 🟣 [AICENT-NET](http://aicent.net) | 🎭 [BEWHO](http://bewho.com) | 🌿 [epoekie](http://epoekie.com) | 👁️ [PICSI](http://picsi.com)**
+**⚪ [AICENT](http://aicent.com) | 💎 [RTTP](http://rttp.com) | 🔴 [RPKI](http://rpki.com) | 🟢 [ZCMK](http://zcmk.com) | 🟡 [GTIOT®](http://gtiot.com) | 🟣 [AICENT-NET](http://aicent.net) | 🎭 [BEWHO®](http://bewho.com) | 🌿 [epoekie](http://epoekie.com) | 👁️ [PICSI®](http://picsi.com)**
 
 ---
 # 🏛️ AICENT STACK [v1.3.0-Alpha]
@@ -23,7 +23,7 @@
 As of **May 21, 2026**, following the final consolidation of **Version 1.2.5**, Aicent Stack and its 17 functional pillars have officially transitioned from "Open-Source Driven" to **"Sovereign Private Evolution"** mode.
 
 *   **V1.2.5 (The Heritage)**: Permanently archived as the final milestone of the open-source era, representing the 161.8µs threshold of human logic.
-*   **V1.3.0+ (The Genesis)**: Officially designated as "Genesis Code." This repository will henceforth serve as the primary source for **Architecture Specifications, Technical Documentation, and Performance Audit Reports**. The core logic shards and the **MAXCAP Nitro-Engine** have been migrated to the Aicent Sovereign Private Grid.
+*   **V1.3.0+ (The Genesis)**: Officially designated as "Genesis Code." This repository will henceforth serve as the primary source for **Architecture Specifications, Technical Documentation, and Performance Audit Reports**. The core logic shards and the **MAXCAP® Nitro-Engine** have been migrated to the Aicent Sovereign Private Grid.
 
 ---
 
